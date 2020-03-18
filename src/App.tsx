@@ -22,7 +22,7 @@ export const App = observer(() => {
 
   return (
     <StoreContext.Provider value={store}>
-      <HeaderBar appName={'Capture App'}
+      <HeaderBar appName={'HMIS 100 - Medical Certificate of Cause of Death'}
         style={{
           left: 0,
           position: 'fixed',

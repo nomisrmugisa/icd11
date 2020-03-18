@@ -429,16 +429,48 @@ export const DataEntryForm: SFC = observer(() => {
               <td className="border p-1" colSpan={2}>
                 State the underlying cause
             </td>
-              <td className="border p-1" colSpan={5}>
-                <ICDField form={form} field="QTKk2Xt8KDu" />
+              <td className="border p-1" colSpan={2}>
+                <ICDField form={form} field="QTKk2Xt8KDu" codeField="sJhOdGLD5lj" uriField="L97MrANAav9"/>
+              </td>
+              <td className="border p-1" colSpan={1}>
+                <Form.Item
+                  name="sJhOdGLD5lj"
+                  className="m-0"
+                >
+                  <Input size="large" disabled={store.viewMode} />
+                </Form.Item>
+              </td>
+              <td className="border p-1" colSpan={2}>
+                <Form.Item
+                  name="L97MrANAav9"
+                  className="m-0"
+                >
+                  <Input size="large" disabled={store.viewMode} />
+                </Form.Item>
               </td>
             </tr>
             <tr>
               <td className="border p-1" colSpan={2}>
                 Other significant conditions contributing to death (time intervals can be included in brackets after the condition)
             </td>
-              <td className="border p-1" colSpan={5}>
-                <ICDField form={form} field="xeE5TQLvucB" />
+              <td className="border p-1" colSpan={2}>
+                <ICDField form={form} field="xeE5TQLvucB" codeField="ctbKSNV2cg7" uriField="T4uxg60Lalw"/>
+              </td>
+              <td className="border p-1" colSpan={1}>
+                <Form.Item
+                  name="ctbKSNV2cg7"
+                  className="m-0"
+                >
+                  <Input size="large" disabled={store.viewMode} />
+                </Form.Item>
+              </td>
+              <td className="border p-1" colSpan={2}>
+                <Form.Item
+                  name="T4uxg60Lalw"
+                  className="m-0"
+                >
+                  <Input size="large" disabled={store.viewMode} />
+                </Form.Item>
               </td>
             </tr>
           </tbody>
