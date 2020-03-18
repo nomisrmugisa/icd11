@@ -13,7 +13,7 @@ const query = {
   program: {
     resource: `programs/vf8dN49jprI`,
     params: {
-      fields: 'organisationUnits[id,name],programStages[programStageDataElements[dataElement[id,name]]]'
+      fields: 'organisationUnits[id,name],programStages[programStageDataElements[displayInReports,dataElement[id,name]]]'
     }
   },
   options: {
@@ -43,7 +43,6 @@ class Store {
   @observable sorter = 'created:desc';
   @observable search = '';
   @observable currentPage = '1';
-  @observable selectedColumns = ['orgUnitName', 'ZYKmQ9GPOaF', 'e96GB4CXyd3', 'MOstDqSY0gO', 'q7e7FOXKnOf', 'i8rrl8YWxLF', 'RbrUuKFSqkZ', 'k9xdBQzYMXo'];
   @observable programOrganisationUnits = [];
   @observable currentEvent: any;
   @observable viewMode = false;
@@ -90,7 +89,7 @@ class Store {
       this.optionSets = fromPairs(options);
       const programStage = data.program.programStages[0];
       this.availableDataElements = programStage.programStageDataElements.map((de: any) => {
-        return { ...de.dataElement, selected: de.dataElement.id === 'ZYKmQ9GPOaF' };
+        return { ...de.dataElement, selected: de.displayInReports };
       });
     } catch (e) {
       console.log(e);
