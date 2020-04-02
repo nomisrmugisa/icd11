@@ -60,9 +60,9 @@
     "description": "HMIS 100 - Medical Certificate of Cause of Death",
     "launch_path": "index.html",
     "icons": {
-      "16": "assets/icons/track16.png",
-      "48": "assets/icons/track48.png",
-      "128": "assets/icons/track128.png"
+      "16": "assets/icons/image001.png",
+      "48": "assets/icons/image001.png",
+      "128": "assets/icons/image001.png"
     },
     "developer": {
       "name": "HISP",
