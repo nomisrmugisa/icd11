@@ -28,7 +28,6 @@ export const ICDField: SFC<ICD> = observer(({ field, form, codeField, uriField }
 
   const myCallbacks = {
     selectedEntityFunction: (selectedEntity: any) => {
-      console.log(selectedEntity);
       form.setFieldsValue({
         [field]: selectedEntity.title,
       });
