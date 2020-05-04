@@ -1,12 +1,12 @@
-import React, { useState, SFC } from "react";
+import React, {SFC, useState} from "react";
 import * as ECT from '@whoicd/icd11ect';
-import { Input, Form, Button } from 'antd';
-import { CloseOutlined } from '@ant-design/icons';
+import {Button, Form, Input} from 'antd';
+import {CloseOutlined} from '@ant-design/icons';
 
 import '@whoicd/icd11ect/style.css';
 import '../App.css';
-import { observer } from "mobx-react";
-import { useStore } from "../Context";
+import {observer} from "mobx-react";
+import {useStore} from "../Context";
 
 const mySettings = {
   apiServerUrl: "https://icd11restapi-developer-test.azurewebsites.net",
@@ -18,10 +18,12 @@ interface ICD {
   form: any;
   codeField?: string;
   uriField?: string;
+  disabled?: boolean;
+  next?: string;
 }
 
 
-export const ICDField: SFC<ICD> = observer(({ field, form, codeField, uriField }) => {
+export const ICDField: SFC<ICD> = observer(({field, form, codeField, uriField, next, disabled = false}) => {
   const [value, setValue] = useState('');
   const [visible, setVisible] = useState(!form.getFieldValue(field));
   const store = useStore();
@@ -31,6 +33,9 @@ export const ICDField: SFC<ICD> = observer(({ field, form, codeField, uriField }
       form.setFieldsValue({
         [field]: selectedEntity.title,
       });
+      if (next) {
+        store.enableValue(next);
+      }
       if (codeField) {
         form.setFieldsValue({
           [codeField]: selectedEntity.code,
@@ -57,17 +62,25 @@ export const ICDField: SFC<ICD> = observer(({ field, form, codeField, uriField }
   }
   return (
     <div>
-      {visible ? <div className="flex"><Input size="large" className="ctw-input" data-ctw-ino={field} value={value} onChange={(e: any) => {
-        setValue(e.target.value)
-      }} /><Button size="large" onClick={clear} icon={<CloseOutlined style={{ fontSize: '16px', color: 'red' }} />} /></div> : <Form.Item
-        name={field}
-        className="m-0"
-      >
+      {visible ?
+        <div className="flex">
+          <Input
+            size="large" disabled={disabled} className="ctw-input" data-ctw-ino={field} value={value}
+            onChange={(e: any) => {
+              setValue(e.target.value)
+            }}/>
+          <Button
+            size="large" onClick={clear}
+            icon={<CloseOutlined style={{fontSize: '16px', color: 'red'}}/>}/>
+        </div> : <Form.Item
+          name={field}
+          className="m-0"
+        >
           <Input size="large" disabled={store.viewMode} onClick={() => {
             if (!store.viewMode) {
               setVisible(true)
             }
-          }} />
+          }}/>
         </Form.Item>}
       <div className="ctw-window" data-ctw-ino={field}></div>
     </div>

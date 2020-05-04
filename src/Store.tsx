@@ -1,6 +1,5 @@
-import { observable, action, computed } from "mobx";
-import { fromPairs } from 'lodash';
-import { flatten } from 'lodash';
+import {action, computed, observable} from "mobx";
+import {flatten, fromPairs} from 'lodash';
 import moment from 'moment';
 
 const query = {
@@ -48,6 +47,90 @@ class Store {
   @observable viewMode = false;
   @observable editing = false;
   @observable availableDataElements = [];
+  @observable allDisabled: any = {
+    ZKBE8Xm9DJG: false,
+    ZYKmQ9GPOaF: false,
+    MOstDqSY0gO: false,
+    zwKo51BEayZ: false,
+    bNpMzyShDCX: false,
+    u44XP9fZweA: false,
+    b70okb06FWa: false,
+    t5nTEmlScSt: false,
+    dsiwvNQLe5n: false,
+    RbrUuKFSqkZ: false,
+    q7e7FOXKnOf: false,
+    e96GB4CXyd3: false,
+    i8rrl8YWxLF: false,
+    xNCSFrgdUgi: false,
+    zcn7acUB6x1: false,
+    KpfvNQSsWIw: false,
+    AJAraEcfH63: false,
+    RJhbkjYrODG: false,
+    ymyLrfEcYkD: false,
+    K5BDPJQk1BP: false,
+    Z41di0TRjIu: false,
+    uaxjt0inPNF: false,
+    V4rE1tsj5Rb: false,
+    ivnHp4M4hFF: false,
+    jf9TogeSZpk: false,
+    lQ1Byr04JTx: false,
+    GFVhltTCG8b: false,
+    xAWYJtQsg8M: false,
+    DdfDMFW4EJ9: false,
+    sfpqAeqKeyQ: false,
+    Ylht9kCLSRW: true,
+    zb7uTuBCPrN: true,
+    QGFYJK00ES7: true,
+    CnPGhOcERFF: true,
+    myydnkmLfhp: true,
+    aC64sB86ThG: true,
+    cmZrrHfTxW3: true,
+    U18Tnfz9EKd: false,
+    QTKk2Xt8KDu: true,
+    DKlOhZJOCrX: true,
+    xeE5TQLvucB: true,
+    FhHPxY16vet: false,
+    KsGOxFyzIs1: false,
+    gNM2Yhypydx: false,
+    tYH7drlbNya: false,
+    fQWuywOaoN2: false,
+    Kk0hmrJPR90: false,
+    b4yPk98om7e: false,
+    j5TIQx3gHyF: false,
+    wX3i3gkTG4m: false,
+    JhHwdQ337nn: false,
+    xDMX2CJ4Xw3: false,
+    o1hG9vr0peF: false,
+    jY3K6Bv4o9Q: false,
+    AZSlwlRAFig: false,
+    UfG52s4YcUt: false,
+    kGIDD5xIeLC: true,
+    mDez8j7furx: false,
+    WkXxkKEJLsg: true,
+    fleGy9CvHYh: true,
+    hO8No9fHVd2: true,
+    zD0E77W4rFs: false,
+    eCVDO6lt4go: true,
+    tuMMQsGtE69: false,
+    C8n6hBilwsX: false,
+    IeS8V8Yf40N: false,
+    sJhOdGLD5lj: false,
+    k9xdBQzYMXo: false,
+    yftBZ5bSEOb: false,
+    fJUy96o8akn: false,
+    S53kx50gjQn: false,
+    L97MrANAav9: false,
+    cSDJ9kSJkFP: false,
+    uckvenVFnwf: false,
+    ZFdJRT3PaUd: false,
+    Op5pSvgHo1M: false,
+    QHY3iYRLvMp: false,
+    NkiH8GTX6HC: false,
+    SDPq8UURlWc: false,
+    zqW9xWyqOur: false,
+    ctbKSNV2cg7: false,
+    T4uxg60Lalw: false
+  };
 
   @action showEvents = () => {
     this.data = null;
@@ -89,7 +172,7 @@ class Store {
       this.optionSets = fromPairs(options);
       const programStage = data.program.programStages[0];
       this.availableDataElements = programStage.programStageDataElements.map((de: any) => {
-        return { ...de.dataElement, selected: de.displayInReports };
+        return {...de.dataElement, selected: de.displayInReports};
       });
     } catch (e) {
       console.log(e);
@@ -112,7 +195,7 @@ class Store {
       const data = await this.engine.query(query);
       const found = data.organisations.organisationUnits.map((unit: any) => {
         return unit.children.map((child: any) => {
-          return { ...child, pId: parent }
+          return {...child, pId: parent}
         })
       });
       const all = flatten(found);
@@ -187,7 +270,7 @@ class Store {
   };
 
   @action addEvent = async (form: any) => {
-    const { eventDate, ...rest } = form;
+    const {eventDate, ...rest} = form;
     const dataValues = Object.entries(rest).map(([dataElement, value]) => {
       if (value instanceof moment) {
         if (dataElement === 'i8rrl8YWxLF') {
@@ -218,8 +301,8 @@ class Store {
       data: event
     }
     if (this.editing && this.currentEvent) {
-      event = { ...event, event: this.currentEvent[0] }
-      createMutation = { ...createMutation, data: event }
+      event = {...event, event: this.currentEvent[0]}
+      createMutation = {...createMutation, data: event}
     }
     try {
       await this.engine.mutate(createMutation);
@@ -259,24 +342,37 @@ class Store {
   @action includeColumns = (id: any) => (e: any) => {
     const elements = this.availableDataElements.map((col: any) => {
       if (col.id === id) {
-        return { ...col, selected: e.target.checked }
+        return {...col, selected: e.target.checked}
       }
       return col;
     });
     this.setAvailableDataElements(elements);
   }
 
+  @action changeDisable = (key: string, value: boolean) => {
+    this.allDisabled = {...this.allDisabled, [key]: value}
+  }
+
+  @action disableValue = (key: string) => {
+    this.allDisabled = {...this.allDisabled, [key]: true}
+  }
+
+  @action enableValue = (key: string) => {
+    this.allDisabled = {...this.allDisabled, [key]: false}
+  }
+
   @computed
   get organisationUnits() {
     const units = this.userOrgUnits.map((unit: any) => {
-      return { id: unit.id, pId: unit.pId || '', value: unit.id, title: unit.name, isLeaf: unit.leaf }
+      return {id: unit.id, pId: unit.pId || '', value: unit.id, title: unit.name, isLeaf: unit.leaf}
     });
     return units;
   }
+
   @computed
   get processedPrograms() {
-    return this.programs.map(({ id, name }) => {
-      return { id, name }
+    return this.programs.map(({id, name}) => {
+      return {id, name}
     })
   }
 
