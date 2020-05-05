@@ -20,7 +20,7 @@ const query = {
     params: {
       fields: 'id,code,options[code,name]',
       paging: 'false',
-      filter: 'code:in:[SX01,YN01,MD,PD01,TI01]'
+      filter: 'code:in:[SX01,YN01,MD,PD01,TI01,100U]'
     }
   }
 }
