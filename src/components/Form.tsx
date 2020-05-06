@@ -434,7 +434,7 @@ export const DataEntryForm = observer(() => {
             <td className="border p-1"> a</td>
             <td className="border p-1">
               <ICDField disabled={store.allDisabled.sfpqAeqKeyQ} next="Ylht9kCLSRW" form={form} field="sfpqAeqKeyQ"
-                        codeField="zD0E77W4rFs" uriField="k9xdBQzYMXo"/>
+                        codeField="zD0E77W4rFs" uriField="k9xdBQzYMXo" searchQueryField="cSDJ9kSJkFP" bestMatchTextField="ZwBcxhUGzMb"/>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -479,7 +479,7 @@ export const DataEntryForm = observer(() => {
             </td>
             <td className="border p-1">
               <ICDField next="myydnkmLfhp" disabled={store.allDisabled.zb7uTuBCPrN} form={form} field="zb7uTuBCPrN"
-                        codeField="tuMMQsGtE69" uriField="yftBZ5bSEOb"/>
+                 searchQueryField="uckvenVFnwf"       codeField="tuMMQsGtE69" uriField="yftBZ5bSEOb"/>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -521,7 +521,7 @@ export const DataEntryForm = observer(() => {
             </td>
             <td className="border p-1">
               <ICDField next="aC64sB86ThG" disabled={store.allDisabled.QGFYJK00ES7} form={form} field="QGFYJK00ES7"
-                        codeField="C8n6hBilwsX" uriField="fJUy96o8akn"/>
+              searchQueryField="ZFdJRT3PaUd"          codeField="C8n6hBilwsX" uriField="fJUy96o8akn"/>
             </td>
 
             <td className="border p-1">
@@ -564,7 +564,7 @@ export const DataEntryForm = observer(() => {
             </td>
             <td className="border p-1">
               <ICDField next="cmZrrHfTxW3" disabled={store.allDisabled.CnPGhOcERFF} form={form} field="CnPGhOcERFF"
-                        codeField="IeS8V8Yf40N" uriField="S53kx50gjQn"/>
+                searchQueryField="Op5pSvgHo1M"        codeField="IeS8V8Yf40N" uriField="S53kx50gjQn"/>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -691,6 +691,44 @@ export const DataEntryForm = observer(() => {
                   <Input size="large" disabled={store.viewMode} type="hidden"/>
                 </Form.Item>
                 </td>
+
+                <td>
+                <Form.Item
+                  name="cSDJ9kSJkFP"
+                  className="m-0"
+                >
+                  <Input size="large" disabled={store.viewMode} type="hidden"/>
+                </Form.Item>
+                </td>
+                <td>
+                <Form.Item
+                  name="uckvenVFnwf"
+                  className="m-0"
+                >
+                  <Input size="large" disabled={store.viewMode} type="hidden"/>
+                </Form.Item>
+                </td>
+
+                <td>
+                <Form.Item
+                  name="ZFdJRT3PaUd"
+                  className="m-0"
+                >
+                  <Input size="large" disabled={store.viewMode} type="hidden"/>
+                </Form.Item>
+                </td>
+
+                <td>
+                <Form.Item
+                  name="Op5pSvgHo1M"
+                  className="m-0"
+                >
+                  <Input size="large" disabled={store.viewMode} type="hidden"/>
+                </Form.Item>
+                </td>
+
+
+
                 </tr> 
           </tbody>
         </table>
