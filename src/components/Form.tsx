@@ -233,7 +233,7 @@ export const DataEntryForm = observer(() => {
         <table className="my-2 w-full border-collapse">
           <tbody>
           <tr>
-            <td className="border p-1" colSpan={2}>Ministry of Health National Case Number</td>
+            <td className="border p-1" colSpan={2}><b>Ministry of Health National Case Number</b></td>
             <td className="border p-1" colSpan={2}>
               <Form.Item
                 name="ZKBE8Xm9DJG"
@@ -255,7 +255,7 @@ export const DataEntryForm = observer(() => {
               </Form.Item>
             </td>
             <td className="border p-1">
-              NIN
+              <b>NIN</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -269,7 +269,7 @@ export const DataEntryForm = observer(() => {
 
           <tr>
             <td className="border p-1">
-              Usual Residence (village)
+              <b>Usual Residence (village)</b>
             </td>
             <td className="border p-1" colSpan={3}>
               <Form.Item
@@ -283,7 +283,7 @@ export const DataEntryForm = observer(() => {
 
           <tr>
             <td className="border p-1">
-              Usual Residence (Parish)
+              <b>Usual Residence (Parish)</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -294,7 +294,7 @@ export const DataEntryForm = observer(() => {
               </Form.Item>
             </td>
             <td className="border p-1">
-              Usual Residence (Sub-county)
+              <b>Usual Residence (Sub-county)</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -307,7 +307,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1">
-              Usual Residence (County)
+              <b>Usual Residence (County)</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -318,7 +318,7 @@ export const DataEntryForm = observer(() => {
               </Form.Item>
             </td>
             <td className="border p-1">
-              Usual Residence (District)
+              <b>Usual Residence (District)</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -331,7 +331,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1">
-              Occupation
+              <b>Occupation</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -342,7 +342,7 @@ export const DataEntryForm = observer(() => {
               </Form.Item>
             </td>
             <td className="border p-1">
-              Date of Birth
+              <b>Date of Birth</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -357,7 +357,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1">
-              Age
+              <b>Age</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -370,7 +370,7 @@ export const DataEntryForm = observer(() => {
               </Form.Item>
             </td>
             <td className="border p-1">
-              Sex
+              <b>Sex</b>
             </td>
             <td className="border p-1">
               {optionSets ? <Form.Item
@@ -385,7 +385,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1">
-              Place of Birth
+              <b>Place of Birth</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -396,7 +396,7 @@ export const DataEntryForm = observer(() => {
               </Form.Item>
             </td>
             <td className="border p-1">
-              Date and time of death
+              <b>Date and time of death</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -417,22 +417,31 @@ export const DataEntryForm = observer(() => {
           <tbody>
           <tr>
             <td colSpan={7} className="border p-1 text-lg">
-              Frame A: Medical Data. Part 1 and 2
+            <h3 style={{ fontWeight:"bolder", color:"#000085"}}>Frame A: Medical Data. Part 1 and 2</h3>
             </td>
+          </tr>
+          <tr>
+            <th style={{ width: "15%"}}></th>
+            <th style={{ width: "5%"}}></th>
+            <th style={{ width: "35%"}}></th>
+            <th style={{ width: "15%"}}></th>
+            <th style={{ width: "15%"}}></th>
+            <th style={{ width: "15%"}}></th>
+            <th style={{ width: "15%"}}></th>
           </tr>
           <tr>
             <td className="border p-1 w-1/4">
             </td>
             <td className="border p-1"/>
-            <td className="border p-1"> Cause of death</td>
-            <td className="border p-1"> Code</td>
-            <td className="border p-1"> Alt Search Text </td>
-            <td className="border p-1">Time interval type from onset to death</td>
-            <td className="border p-1">Time interval from onset to death</td>
+            <td className="border p-1"> <b>Cause of death</b> </td>
+            <td className="border p-1"> <b>Code</b> </td>
+            <td className="border p-1"> <b>Alt Search Text</b>  </td>
+            <td className="border p-1"> <b>Time interval type from onset to death</b></td>
+            <td className="border p-1"> <b>Time interval from onset to death</b></td>
           </tr>
           <tr>
-            <td className="border p-1">Report disease or condition directly leading to death on line a</td>
-            <td className="border p-1"> a</td>
+            <td className="border p-1"> <b>Report disease or condition directly leading to death on line a</b></td>
+            <td className="border p-1"> <b>a</b> </td>
             <td className="border p-1">
               <ICDField disabled={store.allDisabled.sfpqAeqKeyQ} next="Ylht9kCLSRW" form={form} field="sfpqAeqKeyQ"
                         codeField="zD0E77W4rFs" uriField="k9xdBQzYMXo" searchQueryField="cSDJ9kSJkFP" bestMatchTextField="ZwBcxhUGzMb"/>
@@ -473,10 +482,9 @@ export const DataEntryForm = observer(() => {
 
           <tr>
             <td className="border p-1" rowSpan={3}>
-              Report chain of events 'due to' (b to d) in order (if applicable)
-            </td>
+              <b>Report chain of events 'due to' (b to d) in order (if applicable)</b>            </td>
             <td className="border p-1">
-              b
+              <b>b</b> 
             </td>
             <td className="border p-1">
               <ICDField next="myydnkmLfhp" disabled={store.allDisabled.zb7uTuBCPrN} form={form} field="zb7uTuBCPrN"
@@ -603,7 +611,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1" colSpan={2}>
-              State the underlying cause
+              <b>State the underlying cause</b>
             </td>
             <td className="border p-1" colSpan={2}>
             {optionSets ? <Form.Item
@@ -635,8 +643,9 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1" colSpan={2}>
-              Other significant conditions contributing to death (time intervals can be included in brackets after the
+              <b>Other significant conditions contributing to death (time intervals can be included in brackets after the
               condition)
+              </b>            
             </td>
             <td className="border p-1" colSpan={2}>
               <ICDField  form={form}  field="xeE5TQLvucB" codeField="ctbKSNV2cg7"
@@ -739,12 +748,12 @@ export const DataEntryForm = observer(() => {
           <tbody>
           <tr>
             <td colSpan={2} className="border p-1 text-lg">
-              Frame B: Other medical data
+            <h3 style={{ fontWeight:"bolder", color:"#000085"}}> Frame B: Other medical data</h3>
             </td>
           </tr>
           <tr>
             <td className="border p-1">
-              Was surgery performed within the last 4 weeks?
+              <b>Was surgery performed within the last 4 weeks?</b>
             </td>
             <td className="border p-1">
               {optionSets ?
@@ -758,7 +767,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1">
-              If yes please specify date of surgery
+              <b>If yes please specify date of surgery</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -774,7 +783,7 @@ export const DataEntryForm = observer(() => {
 
           <tr>
             <td className="border p-1">
-              If yes please specify reason for surgery (disease or condition)
+              <b>If yes please specify reason for surgery (disease or condition)</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -787,7 +796,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1">
-              Was an autopsy requested?
+              <b>Was an autopsy requested?</b>
             </td>
             <td className="border p-1">
               {optionSets ? <Form.Item
@@ -800,7 +809,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1">
-              If yes were the findings used in the certification?
+              <b>If yes were the findings used in the certification?</b>
             </td>
             <td className="border p-1">
               {optionSets ?
@@ -820,12 +829,12 @@ export const DataEntryForm = observer(() => {
           <tbody>
           <tr>
             <td colSpan={6} className="border p-1 text-lg">
-              Manner of death
+            <h3 style={{ fontWeight:"bolder", color:"#000085"}}><b>Manner of death</b></h3>
             </td>
           </tr>
           <tr>
             <td className="border p-1">
-              Disease
+              <b>Disease</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -837,7 +846,7 @@ export const DataEntryForm = observer(() => {
               </Form.Item>
             </td>
             <td className="border p-1">
-              Assault
+              <b>Assault</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -849,8 +858,7 @@ export const DataEntryForm = observer(() => {
               </Form.Item>
             </td>
             <td className="border p-1">
-              Could not be determined
-            </td>
+              <b>Could not be determined</b>            </td>
             <td className="border p-1">
               <Form.Item
                 name="b4yPk98om7e"
@@ -863,7 +871,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1">
-              Accident
+              <b>Accident</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -875,7 +883,7 @@ export const DataEntryForm = observer(() => {
               </Form.Item>
             </td>
             <td className="border p-1">
-              Legal intervention
+              <b>Legal intervention</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -887,7 +895,7 @@ export const DataEntryForm = observer(() => {
               </Form.Item>
             </td>
             <td className="border p-1">
-              Pending investigation
+              <b>Pending investigation</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -901,7 +909,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1">
-              Intentional self-harm
+              <b>Intentional self-harm</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -913,7 +921,7 @@ export const DataEntryForm = observer(() => {
               </Form.Item>
             </td>
             <td className="border p-1">
-              War
+              <b>War</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -925,7 +933,7 @@ export const DataEntryForm = observer(() => {
               </Form.Item>
             </td>
             <td className="border p-1">
-              Unknown
+              <b>Unknown</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -939,7 +947,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1" colSpan={2}>
-              If external cause or poisoning
+              <b>If external cause or poisoning</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -951,7 +959,7 @@ export const DataEntryForm = observer(() => {
               </Form.Item>
             </td>
             <td className="border p-1">
-              Date of injury
+              <b>Date of injury</b>
             </td>
             <td className="border p-1" colSpan={2}>
               <Form.Item
@@ -966,7 +974,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1" colSpan={3}>
-              Please describe how external cause occurred (If poisoning please specify poisoning agent)
+              <b>Please describe how external cause occurred (If poisoning please specify poisoning agent)</b>
             </td>
             <td className="border p-1" colSpan={3}>
               <Form.Item
@@ -979,7 +987,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1" colSpan={3}>
-              Place of occurrence of the external cause
+              <b>Place of occurrence of the external cause</b>
             </td>
             <td className="border p-1" colSpan={3}>
               <Form.Item
@@ -997,12 +1005,12 @@ export const DataEntryForm = observer(() => {
           <tbody>
           <tr>
             <td colSpan={4} className="border p-1 text-lg">
-              Fetal or infant death
+            <h3 style={{ fontWeight:"bolder", color:"#000085"}}>Fetal or infant death</h3>
             </td>
           </tr>
           <tr>
             <td className="border p-1" colSpan={2}>
-              Multiple pregnancy
+              <b>Multiple pregnancy</b>
             </td>
             <td className="border p-1" colSpan={2}>
               {optionSets ? <Form.Item
@@ -1015,7 +1023,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1" colSpan={2}>
-              Stillborn?
+              <b>Stillborn?</b>
             </td>
             <td className="border p-1" colSpan={2}>
               {optionSets ? <Form.Item
@@ -1028,7 +1036,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1">
-              If death within 24 hrs specify the number of hours survived
+              <b>If death within 24 hrs specify the number of hours survived</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -1039,7 +1047,7 @@ export const DataEntryForm = observer(() => {
               </Form.Item>
             </td>
             <td className="border p-1">
-              Birth weight (in grams)
+              <b>Birth weight (in grams)</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -1054,7 +1062,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1">
-              Number of completed weeks of pregnancy
+              <b>Number of completed weeks of pregnancy</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -1067,7 +1075,7 @@ export const DataEntryForm = observer(() => {
                 <span style={{background: 'yellow'}}>completed weeks should be between 10 and 54 weeks</span> : null}
             </td>
             <td className="border p-1">
-              Age of mother (years)
+              <b>Age of mother (years)</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -1083,8 +1091,7 @@ export const DataEntryForm = observer(() => {
 
           <tr>
             <td className="border p-1" colSpan={2}>
-              If the death was perinatal, please state conditions of mother that affected the fetus and newborn
-            </td>
+              <b>If the death was perinatal, please state conditions of mother that affected the fetus and newborn</b>            </td>
             <td className="border p-1" colSpan={2}>
               <Form.Item
                 name="GFVhltTCG8b"
@@ -1102,7 +1109,7 @@ export const DataEntryForm = observer(() => {
           <tbody>
           <tr>
             <td className="border p-1 text-lg">
-              For women, was the deceased pregnant?
+            <h3 style={{ fontWeight:"bolder", color:"#000085"}}><b>For women, was the deceased pregnant?</b></h3>
             </td>
             <td className="border p-1">
               {optionSets ? <Form.Item
@@ -1115,7 +1122,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1">
-              At what point?
+              <b>At what point?</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -1129,7 +1136,7 @@ export const DataEntryForm = observer(() => {
 
           <tr>
             <td className="border p-1">
-              Did the pregnancy contribute to death?
+              <b>Did the pregnancy contribute to death?</b>
             </td>
             <td className="border p-1">
               {optionSets ? <Form.Item
@@ -1142,7 +1149,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1">
-              Referred from (level of care)
+              <b>Referred from (level of care)</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -1155,7 +1162,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1">
-              Parity
+              <b>Parity</b>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -1168,7 +1175,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1">
-              Mode of delivery
+              <b>Mode of delivery</b>
             </td>
             <td className="border p-1">
               {optionSets ? <Form.Item
@@ -1181,7 +1188,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1">
-              Place of delivery
+              <b>Place of delivery</b>
             </td>
             <td className="border p-1">
               {optionSets ? <Form.Item
@@ -1194,7 +1201,7 @@ export const DataEntryForm = observer(() => {
           </tr>
           <tr>
             <td className="border p-1">
-              Delivered by skilled attendant
+              <b>Delivered by skilled attendant</b>
             </td>
             <td className="border p-1">
               {optionSets ? <Form.Item
