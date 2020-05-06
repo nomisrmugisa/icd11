@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Button, Card, Checkbox, DatePicker, Form, Input, InputNumber, Popconfirm, Select} from 'antd';
+import {Button, Card, Checkbox, DatePicker, Typography, Form, Input, InputNumber, Popconfirm, Select} from 'antd';
 import {observer} from "mobx-react";
 import {ICDField} from "./ICDField";
 import {useStore} from "../Context";
@@ -7,6 +7,7 @@ import {isEmpty} from 'lodash';
 import moment from "moment";
 
 const {Option} = Select;
+const { Title } = Typography;
 
 export const DataEntryForm = observer(() => {
   const [form] = Form.useForm();
@@ -209,7 +210,7 @@ export const DataEntryForm = observer(() => {
           onValuesChange={valuesChange}
     >
 
-      <Card title="New Death Certificate"
+      <Card title={<Title level={2}>New Death Certificate</Title>}
             actions={[
               <p>Inserting for {store.currentOrganisation} </p>,
               !isEmpty(store.defaultValues) ?
