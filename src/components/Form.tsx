@@ -244,7 +244,7 @@ export const DataEntryForm = observer(() => {
             </td>
           </tr>
           <tr>
-            <td className="border p-1">Name (Full name):</td>
+            <td className="border p-1"><b>Name (Full name):</b></td>
             <td className="border p-1">
               <Form.Item
                 rules={[{ required: true, message: 'Enter full name'}]}
@@ -569,7 +569,7 @@ export const DataEntryForm = observer(() => {
 
           <tr>
             <td className="border p-1">
-              d
+             <b>d</b> 
             </td>
             <td className="border p-1">
               <ICDField next="cmZrrHfTxW3" disabled={store.allDisabled.CnPGhOcERFF} form={form} field="CnPGhOcERFF"
