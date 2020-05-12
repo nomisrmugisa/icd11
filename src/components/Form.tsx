@@ -5,9 +5,12 @@ import {ICDField} from "./ICDField";
 import {useStore} from "../Context";
 import {isEmpty} from 'lodash';
 import moment from "moment";
+import { register } from "../serviceWorker";
+import useform from "react-hook-form";
 
 const {Option} = Select;
 const { Title } = Typography;
+
 
 export const DataEntryForm = observer(() => {
   const [form] = Form.useForm();
@@ -66,6 +69,8 @@ export const DataEntryForm = observer(() => {
       }
     }
 
+   
+
     if (changedValues.i8rrl8YWxLF) {
       if (changedValues.i8rrl8YWxLF.isBefore(form.getFieldValue('RbrUuKFSqkZ'))) {
         form.setFieldsValue({i8rrl8YWxLF: null});
@@ -81,6 +86,11 @@ export const DataEntryForm = observer(() => {
     if (changedValues.Ylht9kCLSRW) {
       store.enableValue('WkXxkKEJLsg');
     }
+    if (changedValues.sfpqAeqKeyQ !== 'YN01-01') {
+      store.disableValue('QHY3iYRLvMp');
+      console.log("working");
+      
+    } 
 
     if (changedValues.WkXxkKEJLsg) {
       store.enableValue('zb7uTuBCPrN');
@@ -183,12 +193,17 @@ export const DataEntryForm = observer(() => {
       store.enableValue('UfG52s4YcUt')
     }
 
+    
     if (changedValues.j5TIQx3gHyF) {
       let weeks = moment(form.getFieldValue('i8rrl8YWxLF')).diff(changedValues.RbrUuKFSqkZ, 'weeks');
       if (weeks > 4) {
         form.setFieldsValue({j5TIQx3gHyF: null});
       }
     }
+
+
+        console.log("working");
+
   }
 
   const optionSet = (os: string, field: string) => {
@@ -200,7 +215,7 @@ export const DataEntryForm = observer(() => {
     }
     return null
   }
-
+//const {register} = useform;
 
   return (
     <Form form={form} name="death-certificate"
@@ -340,6 +355,7 @@ export const DataEntryForm = observer(() => {
               >
                 <Input size="large" disabled={store.viewMode || store.allDisabled.dsiwvNQLe5n}/>
               </Form.Item>
+             
             </td>
             <td className="border p-1">
               <b>Date of Birth</b>
@@ -366,7 +382,7 @@ export const DataEntryForm = observer(() => {
                 name="q7e7FOXKnOf"
                 className="m-0"
               >
-                <InputNumber size="large" disabled={store.viewMode || store.allDisabled.q7e7FOXKnOf} />
+                <InputNumber size="large" disabled={store.viewMode || store.allDisabled.q7e7FOXKnOf}  />
               </Form.Item>
             </td>
             <td className="border p-1">
@@ -408,6 +424,8 @@ export const DataEntryForm = observer(() => {
                             placeholder="Select date and time of death"
                             disabled={store.viewMode || store.allDisabled.i8rrl8YWxLF}/>
               </Form.Item>
+              {(form.getFieldValue('i8rrl8YWxLF') - form.getFieldValue('RbrUuKFSqkZ') ) < 0 && form.getFieldValue('i8rrl8YWxLF') != 0?
+                <span style={{color: 'Red'}}>Date of Death cannot be before DOB</span> : null}
             </td>
           </tr>
           </tbody>
@@ -452,7 +470,9 @@ export const DataEntryForm = observer(() => {
                 className="m-0"
               >
                 <Input readOnly={true} size="large" disabled={store.viewMode || store.allDisabled.zD0E77W4rFs}/>
+                
               </Form.Item>
+              
             </td>
             <td className="border p-1">
               <Form.Item
@@ -497,6 +517,7 @@ export const DataEntryForm = observer(() => {
               >
                 <Input  readOnly={true} size="large" disabled={store.viewMode || store.allDisabled.tuMMQsGtE69}/>
               </Form.Item>
+              
             </td>
             <td className="border p-1">
               <Form.Item
@@ -1084,8 +1105,8 @@ export const DataEntryForm = observer(() => {
               >
                 <InputNumber min={1} size="large" disabled={store.viewMode || store.allDisabled.DdfDMFW4EJ9}/>
               </Form.Item>
-              {form.getFieldValue('DdfDMFW4EJ9') < 10 && form.getFieldValue('DdfDMFW4EJ9') > 60 ?
-                <span style={{background: 'yellow'}}>Mothers age is not between 10 and 60 years</span> : null}
+              {form.getFieldValue('DdfDMFW4EJ9') < 10 || form.getFieldValue('DdfDMFW4EJ9') > 60 ?
+                <span style={{color: 'orange'}}>Mothers age is not between 10 and 60 years</span> : null}
             </td>
           </tr>
 
