@@ -124,6 +124,8 @@ export const ICDField: SFC<ICD> = observer(({field, form, codeField, uriField, s
               console.log(store.currentEvent)
               console.log(codeField)
               console.log(searchQueryField)
+              console.log(bestMatchTextField)
+
              var cod  = JSON.stringify(codeField)
              
               if (codeField === 'zD0E77W4rFs'){
