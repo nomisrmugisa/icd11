@@ -85,11 +85,7 @@ export const DataEntryForm = observer(() => {
     if (changedValues.Ylht9kCLSRW) {
       store.enableValue('WkXxkKEJLsg');
     }
-    if (changedValues.sfpqAeqKeyQ !== 'YN01-01') {
-      store.disableValue('QHY3iYRLvMp');
-      console.log("working");
-      
-    } 
+   
 
     if (changedValues.WkXxkKEJLsg) {
       store.enableValue('zb7uTuBCPrN');

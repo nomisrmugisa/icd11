@@ -102,17 +102,48 @@ export const ICDField: SFC<ICD> = observer(({field, form, codeField, uriField, s
               setValue(e.target.value)
               var CODA = e.target.value
               store.causeOfDeathAltSearch(e.target.value)
-              form.setFieldsValue({cSDJ9kSJkFP: null});
+              form.setFieldsValue({cSDJ9kSJkFP: null});            
+              
+              }} 
+              onClick={(e: any) => {
+                console.log(codeField)
+                if (codeField === 'zD0E77W4rFs'){
+                  store.enableValue('zD0E77W4rFs');
+                  store.enableValue('sfpqAeqKeyQ');
+                  store.disableValue('QHY3iYRLvMp');
+    
+                  }        
+                
+                }} 
               
               
-            }}/>
+              
+              />
            <Popconfirm title="ICD Code not found, use as alternate search Text?" onConfirm={(e: any) => {
               console.log(store.ICDAltSearchtextA)
               console.log(store.currentEvent)
               console.log(codeField)
+              console.log(searchQueryField)
              var cod  = JSON.stringify(codeField)
-              console.log(cod)
-        
+             
+              if (codeField === 'zD0E77W4rFs'){
+              store.disableValue('zD0E77W4rFs');
+              store.disableValue('sfpqAeqKeyQ');
+              store.enableValue('QHY3iYRLvMp');
+              store.enableValue('Ylht9kCLSRW');
+
+              form.setFieldsValue({zD0E77W4rFs: null});
+
+              var elem = form.getFieldValue('sfpqAeqKeyQ')
+              console.log(elem);
+
+              }
+
+              if (codeField === 'tuMMQsGtE69'){
+                store.disableValue('NkiH8GTX6HC');
+                }
+
+               
 
               store.disableValue(cod)
               
