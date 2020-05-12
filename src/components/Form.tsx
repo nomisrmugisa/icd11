@@ -4,11 +4,10 @@ import {observer} from "mobx-react";
 import {ICDField} from "./ICDField";
 import {useStore} from "../Context";
 import {isEmpty} from 'lodash';
-import moment from "moment";
+import moment, { weekdaysShort } from "moment";
 
 const {Option} = Select;
 const { Title } = Typography;
-
 export const DataEntryForm = observer(() => {
   const [form] = Form.useForm();
   const [optionSets, setOptionSets] = useState<any>();
@@ -28,13 +27,15 @@ export const DataEntryForm = observer(() => {
     });
   }, [store]);
 
-  
-
   const valuesChange = (changedValues: any, allValues: any) => {
     if (changedValues.RbrUuKFSqkZ) {
       let years = moment().diff(changedValues.RbrUuKFSqkZ, 'years');
       let hours = moment().diff(changedValues.RbrUuKFSqkZ, 'hours');
+
+      const dod = new Date('i8rrl8YWxLF');
+      const dob = new Date('RbrUuKFSqkZ');
       
+
       form.setFieldsValue({q7e7FOXKnOf: years});
       store.disableValue("q7e7FOXKnOf");
 
@@ -58,8 +59,7 @@ export const DataEntryForm = observer(() => {
       }
 
       if (hours < 24) {
-        store.disableValue('jf9TogeSZpk')
-        
+        store.disableValue('jf9TogeSZpk')  
       } else if (hours >= 24 && years <= 1) {
         store.enableValue('jf9TogeSZpk')
         
@@ -526,7 +526,7 @@ export const DataEntryForm = observer(() => {
 
           <tr>
             <td className="border p-1">
-              c
+              <b>c</b>
             </td>
             <td className="border p-1">
               <ICDField next="aC64sB86ThG" disabled={store.allDisabled.QGFYJK00ES7} form={form} field="QGFYJK00ES7"
@@ -573,7 +573,7 @@ export const DataEntryForm = observer(() => {
             </td>
             <td className="border p-1">
               <ICDField next="cmZrrHfTxW3" disabled={store.allDisabled.CnPGhOcERFF} form={form} field="CnPGhOcERFF"
-                searchQueryField="Op5pSvgHo1M"        codeField="IeS8V8Yf40N" uriField="S53kx50gjQn"/>
+                searchQueryField="Op5pSvgHo1M" codeField="IeS8V8Yf40N" uriField="S53kx50gjQn"/>
             </td>
             <td className="border p-1">
               <Form.Item
@@ -615,6 +615,7 @@ export const DataEntryForm = observer(() => {
             </td>
             <td className="border p-1" colSpan={2}>
             {optionSets ? <Form.Item
+              rules={[{ required: true, message: 'Select the underlying cause'}]}
                 name="QTKk2Xt8KDu"
                 className="m-0"
               >
@@ -628,9 +629,6 @@ export const DataEntryForm = observer(() => {
               >
                 <Input size="large" disabled={store.viewMode || store.allDisabled.dTd7txVzhgY}/>
               </Form.Item>
-
-
-
             </td>
             <td className="border p-1" colSpan={2}>
               <Form.Item
@@ -1042,8 +1040,9 @@ export const DataEntryForm = observer(() => {
               <Form.Item
                 name="jf9TogeSZpk"
                 className="m-0"
+                rules={[{type: 'number', required: false, message: 'Can not be more than 24 hours', max:24}]}
               >
-                <InputNumber max={24} size="large" disabled={store.viewMode || store.allDisabled.jf9TogeSZpk}/>
+                <InputNumber size="large" disabled={store.viewMode || store.allDisabled.jf9TogeSZpk}/>
               </Form.Item>
             </td>
             <td className="border p-1">
@@ -1056,8 +1055,8 @@ export const DataEntryForm = observer(() => {
               >
                 <InputNumber size="large" disabled={store.viewMode || store.allDisabled.xAWYJtQsg8M}/>
               </Form.Item>
-              {form.getFieldValue('xAWYJtQsg8M') < 100 && form.getFieldValue('xAWYJtQsg8M') > 10000 ?
-                <span style={{background: 'yellow'}}>Weight should be between 100 and 1000 grams</span> : null}
+              {form.getFieldValue('xAWYJtQsg8M') < 100 || form.getFieldValue('xAWYJtQsg8M') > 10000 ?
+                <span style={{color: 'red'}}>Weight should be between 100 and 1000 grams</span> : null}
             </td>
           </tr>
           <tr>
@@ -1071,8 +1070,8 @@ export const DataEntryForm = observer(() => {
               >
                 <InputNumber size="large" disabled={store.viewMode || store.allDisabled.lQ1Byr04JTx}/>
               </Form.Item>
-              {form.getFieldValue('lQ1Byr04JTx') < 10 && form.getFieldValue('lQ1Byr04JTx') > 55 ?
-                <span style={{background: 'yellow'}}>completed weeks should be between 10 and 54 weeks</span> : null}
+              {form.getFieldValue('lQ1Byr04JTx') < 10 || form.getFieldValue('lQ1Byr04JTx') > 55 ?
+                <span style={{color: 'red'}}>Completed weeks of death should be between 10 and 54 weeks</span> : null}
             </td>
             <td className="border p-1">
               <b>Age of mother (years)</b>
@@ -1084,8 +1083,8 @@ export const DataEntryForm = observer(() => {
               >
                 <InputNumber min={1} size="large" disabled={store.viewMode || store.allDisabled.DdfDMFW4EJ9}/>
               </Form.Item>
-              {form.getFieldValue('DdfDMFW4EJ9') < 10 && form.getFieldValue('DdfDMFW4EJ9') > 60 ?
-                <span style={{background: 'yellow'}}>Mothers age is not between 10 and 60 years</span> : null}
+              {form.getFieldValue('DdfDMFW4EJ9') < 10 || form.getFieldValue('DdfDMFW4EJ9') > 60 ?
+                <span style={{color: 'red'}}>Mothers age should be between 10 and 60 years</span> : null}
             </td>
           </tr>
 
