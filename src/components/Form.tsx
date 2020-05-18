@@ -227,7 +227,7 @@ export const DataEntryForm = observer(() => {
             store.enableValue("uaxjt0inPNF");
         }
 
-        if (changedValues.e96GB4CXyd3 && changedValues !== "SX01-02") {
+        if (changedValues.e96GB4CXyd3 && changedValues.e96GB4CXyd3 !== "SX01-02") {
             store.disableValue("zcn7acUB6x1");
             store.disableValue("KpfvNQSsWIw");
             store.disableValue("AJAraEcfH63");
@@ -236,8 +236,10 @@ export const DataEntryForm = observer(() => {
             store.disableValue("K5BDPJQk1BP");
             store.disableValue("Z41di0TRjIu");
             store.disableValue("uaxjt0inPNF");
-        } else {
-            store.disableValue("zcn7acUB6x1");
+            console.log('not female')
+        } else if (changedValues.e96GB4CXyd3 && changedValues.e96GB4CXyd3 === "SX01-02") {
+            store.enableValue("zcn7acUB6x1");
+            console.log('sex female')
         }
 
         if (
