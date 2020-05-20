@@ -77,6 +77,17 @@ export const DataEntryForm = observer(() => {
     }, [store]);
 
     const valuesChange = (changedValues: any, allValues: any) => {
+        if (changedValues.e96GB4CXyd3  && changedValues.e96GB4CXyd3 === "SX01-02" && form.getFieldValue('q7e7FOXKnOf') > 10 && form.getFieldValue('q7e7FOXKnOf') < 50 ) {
+
+            console.log(form.getFieldValue('q7e7FOXKnOf')) 
+            
+            console.log("sex changed")
+        
+            window.alert("Please Remember to fill in the section: For women, was the deceased pregnant or within 6 weeks of delivery?'")
+
+           
+        }
+
         if (changedValues.RbrUuKFSqkZ) {
             let years = moment().diff(changedValues.RbrUuKFSqkZ, "years");
             let hours = moment().diff(changedValues.RbrUuKFSqkZ, "hours");
@@ -110,6 +121,13 @@ export const DataEntryForm = observer(() => {
             } else if (hours >= 24 && years <= 1) {
                 store.enableValue("jf9TogeSZpk");
             }
+        }
+
+        console.log('clear working')
+        if (changedValues.sfpqAeqKeyQ) {
+
+            form.setFieldsValue({ zD0E77W4rFs: null });
+            console.log('clear working')
         }
 
         if (changedValues.i8rrl8YWxLF) {
@@ -240,6 +258,8 @@ export const DataEntryForm = observer(() => {
         } else if (changedValues.e96GB4CXyd3 && changedValues.e96GB4CXyd3 === "SX01-02") {
             store.enableValue("zcn7acUB6x1");
             console.log('sex female')
+            var x = form.getFieldValue('q7e7FOXKnOf')
+            console.log(x) 
         }
 
         if (
@@ -248,13 +268,24 @@ export const DataEntryForm = observer(() => {
         ) {
             store.disableValue("j5TIQx3gHyF");
             store.disableValue("JhHwdQ337nn");
-            store.disableValue("jY3K6Bv4o9Q");
-            store.disableValue("UfG52s4YcUt");
+            // store.disableValue("jY3K6Bv4o9Q");
+            // store.disableValue("UfG52s4YcUt");
         } else {
             store.enableValue("j5TIQx3gHyF");
             store.enableValue("JhHwdQ337nn");
-            store.enableValue("jY3K6Bv4o9Q");
-            store.enableValue("UfG52s4YcUt");
+            // store.enableValue("jY3K6Bv4o9Q");
+            // store.enableValue("UfG52s4YcUt");
+        }
+
+        if (
+            changedValues.jY3K6Bv4o9Q &&
+            changedValues.jY3K6Bv4o9Q !== "YN01-01"
+        ) {
+            
+             store.disableValue("UfG52s4YcUt");
+        } else {
+           
+             store.enableValue("UfG52s4YcUt");
         }
 
         if (changedValues.j5TIQx3gHyF) {
@@ -599,6 +630,9 @@ export const DataEntryForm = observer(() => {
                             </td>
                             <td className="border p-1">
                                 {optionSets ? (
+
+
+
                                     <Form.Item
                                         rules={[
                                             {
@@ -608,6 +642,11 @@ export const DataEntryForm = observer(() => {
                                         ]}
                                         name="e96GB4CXyd3"
                                         className="m-0"
+                                        
+
+
+
+                                        
                                     >
                                         {optionSet("SX01", "e96GB4CXyd3")}
                                     </Form.Item>
@@ -668,7 +707,7 @@ export const DataEntryForm = observer(() => {
                                              console.log(diff_date)
                                             console.log("function diffdate has been run ")
 
-                                            if (diff_date < 8)
+                                            if (diff_date < 25)
                                             {
                                                 window.alert(" Please remember that you should also complete the section 'Fetal or infant Death'")}
                                         }} 
@@ -723,7 +762,7 @@ export const DataEntryForm = observer(() => {
                             </td>
                             <td className="border p-1">
                                 {" "}
-                                <b>Alt Search Text</b>{" "}
+                                <b>Cause of Death Free Text</b>{" "}
                             </td>
                             <td className="border p-1">
                                 {" "}
@@ -1135,6 +1174,7 @@ export const DataEntryForm = observer(() => {
                             <td className="border p-1" colSpan={1}>
                                 <Form.Item name="dTd7txVzhgY" className="m-0">
                                     <Input
+                                        
                                         size="large"
                                         disabled={
                                             store.viewMode ||
@@ -1181,8 +1221,9 @@ export const DataEntryForm = observer(() => {
                                 />
                             </td>
                             <td className="border p-1" colSpan={1}>
-                                <Form.Item name="TRu1GOUwtq5" className="m-0">
+                                <Form.Item name="ctbKSNV2cg7" className="m-0">
                                     <Input
+                                        readOnly={true}
                                         size="large"
                                         disabled={
                                             store.viewMode ||
@@ -1854,7 +1895,7 @@ export const DataEntryForm = observer(() => {
                                         color: "#000085",
                                     }}
                                 >
-                                    <b>For women, was the deceased pregnant?</b>
+                                    <b>For women, was the deceased pregnant or within 6 weeks of delivery?</b>
                                 </h3>
                             </td>
                             <td className="border p-1">
@@ -1873,15 +1914,14 @@ export const DataEntryForm = observer(() => {
                                 <b>At what point?</b>
                             </td>
                             <td className="border p-1">
-                                <Form.Item name="KpfvNQSsWIw" className="m-0">
-                                    <Input
-                                        size="large"
-                                        disabled={
-                                            store.viewMode ||
-                                            store.allDisabled.KpfvNQSsWIw
-                                        }
-                                    />
-                                </Form.Item>
+                            {optionSets ? (
+                                    <Form.Item
+                                        name="KpfvNQSsWIw"
+                                        className="m-0"
+                                    >
+                                        {optionSet("100ATPOINT", "KpfvNQSsWIw")}
+                                    </Form.Item>
+                                ) : null}
                             </td>
                         </tr>
 
@@ -1905,15 +1945,14 @@ export const DataEntryForm = observer(() => {
                                 <b>Referred from (level of care)</b>
                             </td>
                             <td className="border p-1">
-                                <Form.Item name="RJhbkjYrODG" className="m-0">
-                                    <Input
-                                        size="large"
-                                        disabled={
-                                            store.viewMode ||
-                                            store.allDisabled.RJhbkjYrODG
-                                        }
-                                    />
-                                </Form.Item>
+                            {optionSets ? (
+                                    <Form.Item
+                                        name="RJhbkjYrODG"
+                                        className="m-0"
+                                    >
+                                        {optionSet("100RefLevels", "RJhbkjYrODG")}
+                                    </Form.Item>
+                                ) : null}
                             </td>
                         </tr>
                         <tr>

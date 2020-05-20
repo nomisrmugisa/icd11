@@ -157,6 +157,8 @@ export const ICDField: SFC<ICD> = observer(
                 {visible ? (
                     <div className="flex">
                         <Input
+
+
                             size="large"
                             disabled={
                                 disabled
@@ -181,11 +183,22 @@ export const ICDField: SFC<ICD> = observer(
                                     store.enableValue("sfpqAeqKeyQ");
                                     store.disableValue("QHY3iYRLvMp");
                                 }
+
+                                console.log('input working')
+                                setValue("");
+                            // if (form.getFieldValue('sfpqAeqKeyQ') === ''){
+
+                            //     form.setFieldsValue({ zD0E77W4rFs: null });
+                            //     console.log('clear working')
+                            // }
+
+
+
                             }}
                         />
                         <Popconfirm
                             disabled={buttonIsDisabled}
-                            title="ICD Code not found, use as alternate search Text?"
+                            title="ICD Code not found, use as Free  search Text Field?"
                             onConfirm={(e: any) => {
                                 console.log(store.ICDAltSearchtextA);
                                 console.log(store.currentEvent);
