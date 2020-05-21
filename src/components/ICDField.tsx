@@ -157,7 +157,7 @@ export const ICDField: SFC<ICD> = observer(
                 {visible ? (
                     <div className="flex">
                         <Input
-
+                         
 
                             size="large"
                             disabled={

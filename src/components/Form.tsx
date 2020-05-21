@@ -81,7 +81,8 @@ export const DataEntryForm = observer(() => {
 
     const button = () => {
         console.log("button pressed")
-        form.setFieldsValue({ QHY3iYRLvMp: null });
+        form.setFieldsValue({ QHY3iYRLvMp: "" });
+        
 
     }
 
@@ -228,9 +229,9 @@ export const DataEntryForm = observer(() => {
             (changedValues.ivnHp4M4hFF === "YN01-01" ||
                 changedValues.ivnHp4M4hFF === "YN01-03")
         ) {
-            store.disableValue("jf9TogeSZpk");
-        } else {
             store.enableValue("jf9TogeSZpk");
+        } else {
+            store.disableValue("jf9TogeSZpk");
         }
 
         if (
