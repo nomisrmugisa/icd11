@@ -22,6 +22,9 @@ import moment from "moment";
 const { Option } = Select;
 const { Title } = Typography;
 
+
+
+
 export const DataEntryForm = observer(() => {
     const [form] = Form.useForm();
     const [optionSets, setOptionSets] = useState<any>();
@@ -75,6 +78,12 @@ export const DataEntryForm = observer(() => {
             setOptionSets(store.optionSets);
         });
     }, [store]);
+
+    const button = () => {
+        console.log("button pressed")
+        form.setFieldsValue({ QHY3iYRLvMp: null });
+
+    }
 
     const valuesChange = (changedValues: any, allValues: any) => {
         if (changedValues.e96GB4CXyd3  && changedValues.e96GB4CXyd3 === "SX01-02" && form.getFieldValue('q7e7FOXKnOf') > 10 && form.getFieldValue('q7e7FOXKnOf') < 50 ) {
@@ -852,7 +861,7 @@ export const DataEntryForm = observer(() => {
                             title="Sure to add coded COD"
                             onConfirm={() =>
                                 
-                            console.log("Delete alt text enable cos of death")
+                            button()
                         
                         }
                         >
