@@ -743,11 +743,11 @@ export const DataEntryForm = observer(() => {
                         <tr>
                             <th style={{ width: "15%" }}></th>
                             <th style={{ width: "5%" }}></th>
-                            <th style={{ width: "35%" }}></th>
+                            <th style={{ width: "25%" }}></th>
                             <th style={{ width: "15%" }}></th>
-                            <th style={{ width: "15%" }}></th>
-                            <th style={{ width: "15%" }}></th>
-                            <th style={{ width: "15%" }}></th>
+                            <th style={{ width: "20%" }}></th>
+                            <th style={{ width: "10%" }}></th>
+                            <th style={{ width: "7%" }}></th>
                         </tr>
                         <tr>
                             <td className="border p-1 w-1/4"></td>
@@ -787,6 +787,8 @@ export const DataEntryForm = observer(() => {
                             </td>
                             <td className="border p-1">
                                 <ICDField
+
+                                
                                     enableAltText={(value: boolean) => {
                                         toggleEnableAltSearch("a", value);
                                     }}
@@ -823,7 +825,12 @@ export const DataEntryForm = observer(() => {
                                 </Form.Item>
                             </td>
                             <td className="border p-1">
+                            
                                 <Form.Item name="QHY3iYRLvMp" className="m-0">
+                                   
+                                <table>
+                                <tr>
+                                    <td>
                                     <Input
                                         size="large"
                                         disabled={
@@ -838,7 +845,29 @@ export const DataEntryForm = observer(() => {
                                             );
                                         }}
                                     />
-                                </Form.Item>
+
+                                    </td>
+                                    <td>
+                                    <Popconfirm
+                            title="Sure to add coded COD"
+                            onConfirm={() =>
+                                
+                            console.log("Delete alt text enable cos of death")
+                        
+                        }
+                        >
+                            <Button size="large" name="btnFreeTextA">X</Button>
+                        </Popconfirm>
+
+                                    </td>
+                                </tr>
+                            </table>
+                                    
+                            
+                        
+                                                        </Form.Item>
+
+                                
                             </td>
                             <td className="border p-1">
                                 {optionSets ? (
@@ -912,7 +941,8 @@ export const DataEntryForm = observer(() => {
                             </td>
                             <td className="border p-1">
                                 <Form.Item name="NkiH8GTX6HC" className="m-0">
-                                    <Input
+                                    <table><tr>
+                                        <td><Input
                                         size="large"
                                         disabled={
                                             store.viewMode ||
@@ -925,7 +955,19 @@ export const DataEntryForm = observer(() => {
                                                 e.target.value
                                             );
                                         }}
-                                    />
+                                    /></td>
+                                        <td>
+
+                                        <Popconfirm
+                            title="Sure to add coded COD"
+                            onConfirm={() => console.log("Delete alt text enable cos of death")}
+                        >
+                            <Button size="large">X</Button>
+                        </Popconfirm>
+
+                                        </td>
+                                    </tr></table>
+                                    
                                 </Form.Item>
                             </td>
                             <td className="border p-1">
@@ -994,7 +1036,10 @@ export const DataEntryForm = observer(() => {
                             </td>
                             <td className="border p-1">
                                 <Form.Item name="SDPq8UURlWc" className="m-0">
-                                    <Input
+                                    <table><tr>
+                                        <td>
+
+                                        <Input
                                         size="large"
                                         disabled={
                                             store.viewMode ||
@@ -1008,6 +1053,19 @@ export const DataEntryForm = observer(() => {
                                             );
                                         }}
                                     />
+                                        </td>
+                                        <td>
+                                        <Popconfirm
+                            title="Sure to add coded COD"
+                            onConfirm={() => console.log("Delete alt text enable cos of death")}
+                        >
+                            <Button size="large">X</Button>
+                        </Popconfirm> 
+
+                                        </td>
+                                    </tr></table>
+
+                                    
                                 </Form.Item>
                             </td>
                             <td className="border p-1">
@@ -1075,7 +1133,10 @@ export const DataEntryForm = observer(() => {
                             </td>
                             <td className="border p-1">
                                 <Form.Item name="zqW9xWyqOur" className="m-0">
-                                    <Input
+
+                                <table><tr>
+                                        <td>
+                                        <Input
                                         size="large"
                                         disabled={
                                             store.viewMode ||
@@ -1089,6 +1150,21 @@ export const DataEntryForm = observer(() => {
                                             );
                                         }}
                                     />
+
+                                        </td>
+                                        <td>
+                                       <Popconfirm
+                                            title="Sure to add coded COD"
+                                            onConfirm={() => console.log("Delete alt text enable cos of death")}
+                                        >
+                                            <Button size="large">X</Button>
+                                        </Popconfirm>
+
+
+                                        </td>
+                                    </tr></table>
+
+                                    
                                 </Form.Item>
                             </td>
                             <td className="border p-1">
@@ -1118,6 +1194,9 @@ export const DataEntryForm = observer(() => {
                                 <b>State the underlying cause</b>
                             </td>
                             <td className="border p-1" colSpan={2}>
+
+                                
+
                                 {/* Testing */}
                                 {/* {optionSets ? <Form.Item
                                   rules={[{ required: true, message: 'Select the underlying cause'}]}
@@ -1173,8 +1252,19 @@ export const DataEntryForm = observer(() => {
                             </td>
                             <td className="border p-1" colSpan={1}>
                                 <Form.Item name="dTd7txVzhgY" className="m-0">
-                                    <Input
-                                        
+                                <table><tr>
+                                        <td>
+                                        <Popconfirm
+                            title="Sure to add coded COD"
+                            onConfirm={() => console.log("Delete alt text enable cos of death")}
+                        >
+                            <Button size="large">X</Button>
+                        </Popconfirm>
+
+                                        </td>
+                                        <td>
+                                        <Input
+                                        type="hidden"
                                         size="large"
                                         disabled={
                                             store.viewMode ||
@@ -1187,8 +1277,12 @@ export const DataEntryForm = observer(() => {
                                             );
                                             return;
                                         }}
-                                        value={"HAM"}
+                                        // value={"HAM"}
                                     />
+                                        </td>
+                                    </tr></table>
+
+                                   
                                 </Form.Item>
                             </td>
                             <td className="border p-1" colSpan={2}>
