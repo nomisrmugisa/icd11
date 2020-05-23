@@ -12,6 +12,7 @@ import { any } from "prop-types";
 const mySettings = {
     apiServerUrl: "https://icd11restapi-developer-test.azurewebsites.net",
     autoBind: false,
+    wordsAvailable: false
 };
 
 const state = {
