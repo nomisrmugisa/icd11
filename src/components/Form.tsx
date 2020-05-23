@@ -77,12 +77,43 @@ export const DataEntryForm = observer(() => {
     }, [store]);
 
     const [testVal, setTestVal] = useState("");
-    const button = () => {
+    const buttonA = () => {
         console.log("button pressed");
         // form.setFieldsValue({ QHY3iYRLvMp: "" });
         // button()
         setTestVal("");
     };
+    const [testVal2, setTestVal2] = useState("");
+    const buttonB = () => {
+        console.log("button pressed");
+        // form.setFieldsValue({ QHY3iYRLvMp: "" });
+        // button()
+        setTestVal2("");
+    };
+    const [testVal3, setTestVal3] = useState("");
+    const buttonC = () => {
+        console.log("button pressed");
+        // form.setFieldsValue({ QHY3iYRLvMp: "" });
+        // button()
+        setTestVal3("");
+    };
+
+    const [testVal4, setTestVal4] = useState("");
+    const buttonD = () => {
+        console.log("button pressed");
+        // form.setFieldsValue({ QHY3iYRLvMp: "" });
+        // button()
+        setTestVal4("");
+    };
+
+    // const [testValUnderlying, setTestValUnderlying] = useState("");
+    // const buttonUnderlying = () => {
+    //     console.log("button pressed");
+    //     // form.setFieldsValue({ QHY3iYRLvMp: "" });
+    //     // button()
+    //     setTestValUnderlying("");
+    // };
+
 
     const valuesChange = (changedValues: any, allValues: any) => {
         if (
@@ -866,7 +897,7 @@ export const DataEntryForm = observer(() => {
                                             <td>
                                                 <Popconfirm
                                                     title="Sure to add coded COD"
-                                                    onConfirm={() => button()}
+                                                    onConfirm={() => buttonA()}
                                                 >
                                                     <Button
                                                         size="large"
@@ -963,7 +994,11 @@ export const DataEntryForm = observer(() => {
                                                             .NkiH8GTX6HC ||
                                                         altSearchIsDisabled.b
                                                     }
+                                                    value={testVal2}
                                                     onChange={(e: any) => {
+                                                        setTestVal2(
+                                                            e.target.value
+                                                             );
                                                         editUnderlyingCauses(
                                                             "b",
                                                             e.target.value
@@ -974,13 +1009,15 @@ export const DataEntryForm = observer(() => {
                                             <td>
                                                 <Popconfirm
                                                     title="Sure to add coded COD"
-                                                    onConfirm={() =>
-                                                        console.log(
-                                                            "Delete alt text enable cos of death"
-                                                        )
-                                                    }
+                                                    onConfirm={() => buttonB()}
+                                                    
                                                 >
-                                                    <Button size="large">
+                                                    <Button 
+                                                    size="large"
+                                                    name="btnFreeTextB"
+
+                                                    
+                                                    >
                                                         X
                                                     </Button>
                                                 </Popconfirm>
@@ -1066,7 +1103,11 @@ export const DataEntryForm = observer(() => {
                                                             .SDPq8UURlWc ||
                                                         altSearchIsDisabled.c
                                                     }
+                                                    value={testVal3}
                                                     onChange={(e: any) => {
+                                                        setTestVal3(
+                                                            e.target.value
+                                                             );
                                                         editUnderlyingCauses(
                                                             "c",
                                                             e.target.value
@@ -1077,13 +1118,13 @@ export const DataEntryForm = observer(() => {
                                             <td>
                                                 <Popconfirm
                                                     title="Sure to add coded COD"
-                                                    onConfirm={() =>
-                                                        console.log(
-                                                            "Delete alt text enable cos of death"
-                                                        )
-                                                    }
+                                                    onConfirm={() => buttonC()}
                                                 >
-                                                    <Button size="large">
+                                                    <Button 
+                                                    size="large"
+                                                    name="btnFreeTextC"
+
+                                                    >
                                                         X
                                                     </Button>
                                                 </Popconfirm>
@@ -1168,7 +1209,11 @@ export const DataEntryForm = observer(() => {
                                                             .zqW9xWyqOur ||
                                                         altSearchIsDisabled.d
                                                     }
+                                                    value={testVal4}
                                                     onChange={(e: any) => {
+                                                        setTestVal4(
+                                                            e.target.value
+                                                             );
                                                         editUnderlyingCauses(
                                                             "d",
                                                             e.target.value
@@ -1179,13 +1224,11 @@ export const DataEntryForm = observer(() => {
                                             <td>
                                                 <Popconfirm
                                                     title="Sure to add coded COD"
-                                                    onConfirm={() =>
-                                                        console.log(
-                                                            "Delete alt text enable cos of death"
-                                                        )
-                                                    }
+                                                    onConfirm={() => buttonD()}
                                                 >
-                                                    <Button size="large">
+                                                    <Button 
+                                                    name="btnFreeTextD"
+                                                    size="large">
                                                         X
                                                     </Button>
                                                 </Popconfirm>
@@ -1236,7 +1279,12 @@ export const DataEntryForm = observer(() => {
                                         style={{ width: "100%" }}
                                         size="large"
                                         disabled={store.viewMode}
+                                        //value={testValUnderlying}
+
                                         onChange={(e: any) => {
+                                            // setTestValUnderlying(
+                                            //     e.target.value
+                                            // );
                                             addDiseaseTitle(e);
                                         }}
                                     >
@@ -1279,22 +1327,11 @@ export const DataEntryForm = observer(() => {
                                     <table>
                                         <tr>
                                             <td>
-                                                <Popconfirm
-                                                    title="Sure to add coded COD"
-                                                    onConfirm={() =>
-                                                        console.log(
-                                                            "Delete alt text enable cos of death"
-                                                        )
-                                                    }
-                                                >
-                                                    <Button size="large">
-                                                        X
-                                                    </Button>
-                                                </Popconfirm>
+                                               
                                             </td>
                                             <td>
                                                 <Input
-                                                    type="hidden"
+                                                    readOnly
                                                     size="large"
                                                     disabled={
                                                         store.viewMode ||
