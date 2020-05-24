@@ -116,6 +116,21 @@ export const DataEntryForm = observer(() => {
 
 
     const valuesChange = (changedValues: any, allValues: any) => {
+        
+        if (changedValues.zD0E77W4rFs !== '') {
+                 console.log("code has changed ZDOE")
+        //         //var str = (form.getFieldValue('zD0E77W4rFs')).charAt(0);
+        //         // var res = str.charAt(0)
+        //        // var res =  JSON.stringify(str);
+        //         // var rest = res.charAt(0)
+        //         // console.log(rest)
+                //var res = str.charAt(0)
+
+               var str = form.getFieldValue('zD0E77W4rFs') 
+               console.log(str)
+        }
+
+        
         if (
             changedValues.e96GB4CXyd3 &&
             changedValues.e96GB4CXyd3 === "SX01-02" &&

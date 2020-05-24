@@ -73,11 +73,30 @@ export const ICDField: SFC<ICD> = observer(
                         [codeField]: selectedEntity.code,
                     });
 
+                if (selectedEntity.code.charAt(0) === 'N'){
+
+                    // var coded = selectedEntity.code
+                    
+                    //var res =  JSON.stringify(coded);
+                    // console.log(coded.charAt(0));
+                    console.log("Code starts with N")
+                    
+                    store.disableValue("FhHPxY16vet");
+                    store.disableValue("wX3i3gkTG4m")
+                    store.disableValue("KsGOxFyzIs1")
+                    store.disableValue("tYH7drlbNya")
+                    store.disableValue("xDMX2CJ4Xw3")
+                    store.disableValue("b4yPk98om7e")
+                    store.disableValue("fQWuywOaoN2")
+                    store.disableValue("o1hG9vr0peF")
+
+                }
+
                     // Testing
                     if (addUnderlyingCause) {
                         addUnderlyingCause(
                             selectedEntity.code,
-                            selectedEntity.title
+                            selectedEntity.title 
                         ); // Calls a function from the props that sets the underlying cause as the code
                     }
                 } else {
