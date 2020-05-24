@@ -117,18 +117,7 @@ export const DataEntryForm = observer(() => {
 
     const valuesChange = (changedValues: any, allValues: any) => {
         
-        if (changedValues.zD0E77W4rFs !== '') {
-                 console.log("code has changed ZDOE")
-        //         //var str = (form.getFieldValue('zD0E77W4rFs')).charAt(0);
-        //         // var res = str.charAt(0)
-        //        // var res =  JSON.stringify(str);
-        //         // var rest = res.charAt(0)
-        //         // console.log(rest)
-                //var res = str.charAt(0)
-
-               var str = form.getFieldValue('zD0E77W4rFs') 
-               console.log(str)
-        }
+       
 
         
         if (
@@ -1054,6 +1043,7 @@ export const DataEntryForm = observer(() => {
                             <td className="border p-1">
                                 <Form.Item name="fleGy9CvHYh" className="m-0">
                                     <InputNumber
+                                        min={1}        
                                         size="large"
                                         disabled={
                                             store.viewMode ||
@@ -1161,6 +1151,7 @@ export const DataEntryForm = observer(() => {
                             <td className="border p-1">
                                 <Form.Item name="hO8No9fHVd2" className="m-0">
                                     <InputNumber
+                                        min={1}
                                         size="large"
                                         disabled={
                                             store.viewMode ||
@@ -1265,6 +1256,7 @@ export const DataEntryForm = observer(() => {
                             <td className="border p-1">
                                 <Form.Item name="eCVDO6lt4go" className="m-0">
                                     <InputNumber
+                                        min={1}
                                         size="large"
                                         disabled={
                                             store.viewMode ||
