@@ -48,6 +48,7 @@ export const ICDField: SFC<ICD> = observer(
         // Testing
         const [buttonIsDisabled, setButtonIsDisabled] = useState(true);
         const [inputIsDisabled, setInputIsDisabled] = useState(false);
+        const [popConfirmVisible, setPopConfirmVisible] = useState(false);
 
         //
         const [value, setValue] = useState("");
@@ -59,6 +60,7 @@ export const ICDField: SFC<ICD> = observer(
             searchEndedFunction: (e: any) => {
                 //this callback is called when search ends.
                 setButtonIsDisabled(false);
+                setPopConfirmVisible(true);
             },
             // End of Testing
             selectedEntityFunction: (selectedEntity: any) => {
@@ -218,6 +220,10 @@ export const ICDField: SFC<ICD> = observer(
                         />
                         <Popconfirm
                             disabled={buttonIsDisabled}
+                            visible={popConfirmVisible}
+                            onVisibleChange={() =>
+                                setPopConfirmVisible(!popConfirmVisible)
+                            }
                             title="ICD Code not found, use as Free  search Text Field?"
                             onConfirm={(e: any) => {
                                 console.log(store.ICDAltSearchtextA);

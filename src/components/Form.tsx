@@ -26,6 +26,9 @@ export const DataEntryForm = observer(() => {
     const [form] = Form.useForm();
     const [optionSets, setOptionSets] = useState<any>();
 
+    //blacklist
+    const blacklistedValues = ["N"];
+
     // Testing
     type altSearchBooleansOptions = {
         [key: string]: boolean;
@@ -1300,6 +1303,11 @@ export const DataEntryForm = observer(() => {
                                                 if (
                                                     option.includes(
                                                         "disease"
+                                                    ) === false &&
+                                                    blacklistedValues.includes(
+                                                        underlyingCauses[
+                                                            `diseaseTitle${option.toUpperCase()}`
+                                                        ][0]
                                                     ) === false
                                                 ) {
                                                     return (
