@@ -43,6 +43,9 @@ export const DataEntryForm = observer(() => {
         altSearchBooleans
     );
 
+
+    const [underlyingCauseCode, setUnderlyingCauseCode] = useState("");
+
     type underlyingCauseObjectOptions = {
         [key: string]: string;
     };
@@ -415,6 +418,7 @@ export const DataEntryForm = observer(() => {
         console.log("Adding disease title of ", titleToAdd);
 
         // This Updates the problematic field Next to State underlying cause
+        setUnderlyingCauseCode(titleToAdd);
         form.setFieldsValue({
             dTd7txVzhgY: titleToAdd,
         });
@@ -1360,7 +1364,7 @@ export const DataEntryForm = observer(() => {
                                                         );
                                                         return;
                                                     }}
-                                                    // value={"HAM"}
+                                                    value={underlyingCauseCode}
                                                 />
                                             </td>
                                         </tr>
