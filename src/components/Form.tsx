@@ -845,6 +845,7 @@ export const DataEntryForm = observer(() => {
                             </td>
                             <td className="border p-1">
                                 <ICDField
+                                    id="icdField1"
                                     enableAltText={(value: boolean) => {
                                         toggleEnableAltSearch("a", value);
                                     }}
@@ -958,6 +959,7 @@ export const DataEntryForm = observer(() => {
                             </td>
                             <td className="border p-1">
                                 <ICDField
+                                    id="icdField2"
                                     next="myydnkmLfhp"
                                     enableAltText={(value: boolean) => {
                                         toggleEnableAltSearch("b", value);
@@ -1067,6 +1069,7 @@ export const DataEntryForm = observer(() => {
                             </td>
                             <td className="border p-1">
                                 <ICDField
+                                   id="icdField3"
                                     enableAltText={(value: boolean) => {
                                         toggleEnableAltSearch("c", value);
                                     }}
@@ -1175,6 +1178,7 @@ export const DataEntryForm = observer(() => {
                             </td>
                             <td className="border p-1">
                                 <ICDField
+                                    id="icdField4"
                                     enableAltText={(value: boolean) => {
                                         toggleEnableAltSearch("d", value);
                                     }}
@@ -1394,6 +1398,8 @@ export const DataEntryForm = observer(() => {
                             </td>
                             <td className="border p-1" colSpan={2}>
                                 <ICDField
+
+                                    id="icdField5"
                                     form={form}
                                     field="xeE5TQLvucB"
                                     codeField="ctbKSNV2cg7"
