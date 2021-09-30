@@ -33,7 +33,8 @@ export const App = observer(() => {
       />
       <div className="p-2">
         <OrgUnitTree />
-        {store.currentPage === '2' ? <DataEntryForm /> : <EventList />}
+        {/* {store.currentPage === '2' ? <DataEntryForm /> : <EventList />} */}
+        <DataEntryForm />
       </div>
     </StoreContext.Provider>
   )
