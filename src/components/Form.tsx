@@ -568,27 +568,59 @@ export const DataEntryForm = observer(() => {
   const [creatingCustomField, setCreatingFiled] = React.useState(false);
   const [customFieldName, setCustomFieldName] = React.useState("");
 
-  const customRowsRef = React.useRef(
-    [] as { label: string; id: string | null }[]
-  );
+  // const customRowsRef = React.useRef(
+  //   [] as { name: string; id: string | null }[]
+  // );
   const [customRows, setCustomRows] = React.useState(
-    [] as { label: string; id: string | null }[]
+    [] as { name: string; id: string | null }[]
   );
+
+  React.useEffect(() => {
+    console.log(customRowLength);
+    fetch("https://hmis-dev.health.go.ug/api/dataStore/Attributes/Attributes", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `${process.env.REACT_APP_DHIS2_AUTHORIZATION}`,
+      },
+    })
+      .then((raw) => raw.json())
+      .then((res) => {
+        console.log(res);
+        if (res.status === "ERROR") {
+          alert(res.message);
+          setCustomRows([]);
+          setCustomRowLength(0);
+        } else {
+          console.log(res);
+          setCustomRows(res);
+        }
+      });
+  }, [customRowLength]);
 
   // React.useEffect(() => {
   //   if (customRowLength > 0) {
   //     console.log(customRowLength);
   //     const newArray = [...customRowsRef.current];
-  //     newArray.push({ label: customFieldName, id: null });
+  //     newArray.push({ name: customFieldName, id: null });
   //     customRowsRef.current = [...newArray];
   //     setCustomRows(customRowsRef.current);
   //   }
   // }, [customFieldName, customRowLength]);
 
   const [fetching, setFetching] = React.useState(false);
+  const [deleting, setDeleting] = React.useState(false);
   console.log(process.env.REACT_APP_DHIS2_AUTHORIZATION);
   React.useEffect(() => {
     if (fetching) {
+      if (
+        customRows.find(({ name }) => {
+          return name.toLowerCase() === customFieldName.toLowerCase();
+        })
+      ) {
+        alert(`${customFieldName} Already exists`);
+        return;
+      }
       fetch("https://hmis-dev.health.go.ug/api/system/id?", {
         headers: {
           Accept: "application/json",
@@ -601,35 +633,42 @@ export const DataEntryForm = observer(() => {
           if (res.codes) {
             let field = { ...customRows[customRowLength - 1] };
             field.id = res.codes[0];
-            fetch("https://hmis-dev.health.go.ug/api/dataElements", {
-              headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-                Authorization: `${process.env.REACT_APP_DHIS2_AUTHORIZATION}`,
-              },
-              method: "POST",
-              body: JSON.stringify({
-                aggregationType: "NONE",
-                domainType: "TRACKER",
-                valueType: "TEXT",
-                name: customFieldName,
-                shortName: field.id,
-                id: field.id,
-                code: field.id,
-                categoryCombo: { id: "bjDvmb4bfuf" },
-                legendSets: [],
-              }),
-            })
+            fetch(
+              "https://hmis-dev.health.go.ug/api/dataStore/Attributes/Attributes",
+              {
+                headers: {
+                  Accept: "application/json",
+                  "Content-Type": "application/json",
+                  Authorization: `${process.env.REACT_APP_DHIS2_AUTHORIZATION}`,
+                },
+                method: "PUT",
+                body: JSON.stringify([
+                  ...customRows,
+                  {
+                    aggregationType: "NONE",
+                    domainType: "TRACKER",
+                    valueType: "TEXT",
+                    name: customFieldName,
+                    shortName: field.id,
+                    id: field.id,
+                    code: field.id,
+                    categoryCombo: { id: "bjDvmb4bfuf" },
+                    legendSets: [],
+                  },
+                ]),
+              }
+            )
               .then((raw) => raw.json())
               .then((res) => {
                 console.log(res);
-                if (res.httpStatus === "Created") {
+                if (res.httpStatusCode === 200) {
                   setCustomRowLength(customRowLength + 1);
-                  const newArray = [...customRowsRef.current];
-                  newArray.push({ ...field, label: customFieldName });
-                  customRowsRef.current = [...newArray];
-                  setCustomRows(customRowsRef.current);
+                  // const newArray = [...customRowsRef.current];
+                  // newArray.push({ ...field, name: customFieldName });
+                  // customRowsRef.current = [...newArray];
+                  // setCustomRows(customRowsRef.current);
                   setCustomFieldName("");
+                  setFetching(false);
                 } else {
                   alert(`${res.httpStatus}: ${res.message}`);
                 }
@@ -649,6 +688,40 @@ export const DataEntryForm = observer(() => {
         });
     }
   }, [customFieldName, customRowLength, customRows, fetching]);
+  React.useEffect(() => {
+    if (deleting) {
+      fetch(
+        "https://hmis-dev.health.go.ug/api/dataStore/Attributes/Attributes",
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `${process.env.REACT_APP_DHIS2_AUTHORIZATION}`,
+          },
+          method: "PUT",
+          body: JSON.stringify([
+            ...customRows,
+            
+          ]),
+        }
+      )
+        .then((raw) => raw.json())
+        .then((res) => {
+          console.log(res);
+          if (res.httpStatusCode === 200) {
+            setCustomRowLength(customRowLength - 1);
+            setDeleting(false);
+          } else {
+            alert(`${res.httpStatus}: ${res.message}`);
+          }
+          setDeleting(false);
+        })
+        .catch(() => {
+          setDeleting(false);
+          alert("Error");
+        });
+    }
+  }, [customFieldName, customRowLength, customRows, deleting]);
 
   return (
     <Form
@@ -955,17 +1028,18 @@ export const DataEntryForm = observer(() => {
             </tr>
             {customRows.map(
               (
-                { label, id }: { label: string; id: string | null },
+                { name, id }: { name: string; id: string | null },
                 index: number
               ) => {
                 // console.log(index, " custom rows");
                 return (
                   <tr key={index}>
                     <td className="border p-1" colSpan={2}>
-                      <b>{label}</b>
+                      <b>{name}</b>
                     </td>
-                    <td className="border p-1" colSpan={2}>
-                      <Form.Item name={id as string} className="m-0">
+                    <td className="border p-1"   colSpan={2}>
+                      <span style={{display: 'flex'}}>
+                      <Form.Item name={id as string} className="m-0" style={{flexGrow: 1}}>
                         <Input
                           size="large"
                           // disabled={
@@ -974,6 +1048,41 @@ export const DataEntryForm = observer(() => {
                           // }
                         />
                       </Form.Item>
+                      <span
+                        style={{ display: "inline-block", cursor: "pointer" }}
+                      >
+                        <button
+                          disabled={fetching || deleting}
+                          type="button"
+                          className="ant-btn ant-btn-lg ant-btn-icon-only"
+                          onClick={()=>{
+                            const rows = [...customRows];
+                            rows.splice(index, 1);
+                            setCustomRows([...rows]);
+                            setDeleting(true);
+                          }}
+                        >
+                          <span
+                            role="img"
+                            aria-label="close"
+                            className="anticon anticon-close"
+                            style={{ fontSize: "16px", color: "red" }}
+                          >
+                            <svg
+                              viewBox="64 64 896 896"
+                              focusable="false"
+                              data-icon="close"
+                              width="1em"
+                              height="1em"
+                              fill="currentColor"
+                              aria-hidden="true"
+                            >
+                              <path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path>
+                            </svg>
+                          </span>
+                        </button>
+                      </span>
+                      </span>
                     </td>
                   </tr>
                 );
@@ -1014,7 +1123,7 @@ export const DataEntryForm = observer(() => {
             // setCustomRowLength(customRowLength + 1);
           }}
         >
-          +Add row
+          +Add field
         </button>
 
         <table className="my-2 w-full border-collapse px-2">
