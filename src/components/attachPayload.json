@@ -1,0 +1,1739 @@
+{
+  "programStages": [
+    {
+      "allowGenerateNextVisit": false,
+      "publicAccess": "rwrw----",
+      "lastUpdated": "2021-09-23T07:00:23.065",
+      "id": "aKclf7Yl1PE",
+      "generatedByEnrollmentDate": false,
+      "created": "2019-07-08T16:25:35.310",
+      "attributeValues": [],
+      "name": "HMIS 100 - Medical Certificate of Cause of Death",
+      "hideDueDate": false,
+      "enableUserAssignment": false,
+      "minDaysFromStart": 0,
+      "executionDateLabel": "Date of review",
+      "preGenerateUID": false,
+      "openAfterEnrollment": false,
+      "repeatable": false,
+      "remindCompleted": false,
+      "displayGenerateEventBox": true,
+      "validationStrategy": "ON_COMPLETE",
+      "autoGenerateEvent": true,
+      "blockEntryForm": false,
+      "dataEntryForm": { "id": "yaniKwvEQHC" },
+      "program": { "id": "vf8dN49jprI" },
+      "lastUpdatedBy": { "id": "TOxBp54avQe" },
+      "user": { "id": "nin1kqEqWYj" },
+      "programStageDataElements": [
+        {
+          "created": "2019-09-23T22:45:37.606",
+          "lastUpdated": "2021-07-23T12:27:11.001",
+          "id": "XUBVTLxuIvM",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": true,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 0,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "ZKBE8Xm9DJG",
+            "domainType": "TRACKER",
+            "displayName": "004-020-100-DN01. Ministry of Health National Case Number.",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.431",
+          "lastUpdated": "2021-07-23T12:27:11.000",
+          "id": "CuwiDIJLq6a",
+          "displayInReports": true,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": true,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 1,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "ZYKmQ9GPOaF",
+            "domainType": "TRACKER",
+            "displayName": "100-DD01. Full Name",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.433",
+          "lastUpdated": "2021-07-23T12:27:11.003",
+          "id": "K1k3njbIUMz",
+          "displayInReports": true,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 2,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "MOstDqSY0gO",
+            "domainType": "TRACKER",
+            "displayName": "100-DD02. NIN",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.436",
+          "lastUpdated": "2021-07-23T12:27:11.007",
+          "id": "IuoutSb54Fr",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 3,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "zwKo51BEayZ",
+            "domainType": "TRACKER",
+            "displayName": "100-DD04a. Usual Residence-Village",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.430",
+          "lastUpdated": "2021-07-23T12:27:10.999",
+          "id": "xW0lAEFQ4Nr",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 4,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "bNpMzyShDCX",
+            "domainType": "TRACKER",
+            "displayName": "100-DD04b. Usual Residence-Parish",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.442",
+          "lastUpdated": "2021-07-23T12:27:11.013",
+          "id": "pO4M977iSuD",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 5,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "u44XP9fZweA",
+            "domainType": "TRACKER",
+            "displayName": "100-DD04c. Usual Residence-Sub-County",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.438",
+          "lastUpdated": "2021-07-23T12:27:11.008",
+          "id": "lA04XU5f7S2",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 6,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "b70okb06FWa",
+            "domainType": "TRACKER",
+            "displayName": "100-DD04d. Usual Residence-County",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.443",
+          "lastUpdated": "2021-07-23T12:27:11.015",
+          "id": "Pab9ZTXptKA",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 7,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "t5nTEmlScSt",
+            "domainType": "TRACKER",
+            "displayName": "100-DD04e. District",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.435",
+          "lastUpdated": "2021-07-23T12:27:11.005",
+          "id": "fleRnt3La4j",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 8,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "dsiwvNQLe5n",
+            "domainType": "TRACKER",
+            "displayName": "100-DD05. Occupation",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.430",
+          "lastUpdated": "2021-07-23T12:27:10.999",
+          "id": "vg1rtdcBeo1",
+          "displayInReports": true,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 9,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "RbrUuKFSqkZ",
+            "domainType": "TRACKER",
+            "displayName": "100-DD06. Date of Birth",
+            "valueType": "DATE"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.433",
+          "lastUpdated": "2021-07-23T12:27:11.003",
+          "id": "YnBO1SYu9Rt",
+          "displayInReports": true,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": true,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 10,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "q7e7FOXKnOf",
+            "domainType": "TRACKER",
+            "displayName": "100-DD07. Age",
+            "valueType": "INTEGER_ZERO_OR_POSITIVE"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.439",
+          "lastUpdated": "2021-07-23T12:27:11.009",
+          "id": "MdzJ6vfrGdJ",
+          "displayInReports": true,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": true,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 11,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "e96GB4CXyd3",
+            "domainType": "TRACKER",
+            "displayName": "100-DD08. Sex",
+            "valueType": "TEXT",
+            "optionSet": { "id": "jKGM574bFRG" }
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.440",
+          "lastUpdated": "2021-07-23T12:27:11.010",
+          "id": "Xe2mastZw3A",
+          "displayInReports": true,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": true,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 12,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "i8rrl8YWxLF",
+            "domainType": "TRACKER",
+            "displayName": "100-DDO10. Date and time of Death",
+            "valueType": "DATETIME"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.436",
+          "lastUpdated": "2021-07-23T12:27:11.005",
+          "id": "TXx2Cf0kOdT",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": true,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 13,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "xNCSFrgdUgi",
+            "domainType": "TRACKER",
+            "displayName": "100-DDO9. Place of Death",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.443",
+          "lastUpdated": "2021-07-23T12:27:11.014",
+          "id": "cvMgtQlrnjm",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 14,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "zcn7acUB6x1",
+            "domainType": "TRACKER",
+            "displayName": "100-DP01. For women, was the deceased pregnant?",
+            "valueType": "TEXT",
+            "optionSet": { "id": "lty3hU2YI42" }
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.444",
+          "lastUpdated": "2021-07-23T12:27:11.015",
+          "id": "M7mjLlQlCFm",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 15,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "KpfvNQSsWIw",
+            "domainType": "TRACKER",
+            "displayName": "100-DP02. If yes, at what point in time was deceased pregnant?",
+            "valueType": "TEXT",
+            "optionSet": { "id": "J3dE7VOk9gU" }
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.444",
+          "lastUpdated": "2021-07-23T12:27:11.015",
+          "id": "sW3YjC88bvU",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 16,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "AJAraEcfH63",
+            "domainType": "TRACKER",
+            "displayName": "100-DP03. Did the pregnancy contribute to the death?",
+            "valueType": "TEXT",
+            "optionSet": { "id": "lty3hU2YI42" }
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.432",
+          "lastUpdated": "2021-07-23T12:27:11.001",
+          "id": "g6Cp24LxLAj",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 17,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "RJhbkjYrODG",
+            "domainType": "TRACKER",
+            "displayName": "100-DP04. Referred from (level of care)",
+            "valueType": "TEXT",
+            "optionSet": { "id": "jFktkaq82Zr" }
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.433",
+          "lastUpdated": "2021-07-23T12:27:11.003",
+          "id": "HxPc3u2NRqo",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 18,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "ymyLrfEcYkD",
+            "domainType": "TRACKER",
+            "displayName": "100-DP05. Parity",
+            "valueType": "INTEGER_ZERO_OR_POSITIVE"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.437",
+          "lastUpdated": "2021-07-23T12:27:11.007",
+          "id": "cTXv13Cl05I",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 19,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "K5BDPJQk1BP",
+            "domainType": "TRACKER",
+            "displayName": "100-DP06. Mode of delivery",
+            "valueType": "TEXT",
+            "optionSet": { "id": "wuQKd5QDxvs" }
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.434",
+          "lastUpdated": "2021-07-23T12:27:11.004",
+          "id": "uCCrhCDt9VQ",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 20,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "Z41di0TRjIu",
+            "domainType": "TRACKER",
+            "displayName": "100-DP07. Place of delivery",
+            "valueType": "TEXT",
+            "optionSet": { "id": "bBncS2fyDQM" }
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.437",
+          "lastUpdated": "2021-07-23T12:27:11.008",
+          "id": "Vy8GEv8H7Md",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 21,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "uaxjt0inPNF",
+            "domainType": "TRACKER",
+            "displayName": "100-DP08. Delivered by skilled attendant",
+            "valueType": "TEXT",
+            "optionSet": { "id": "lty3hU2YI42" }
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.441",
+          "lastUpdated": "2021-07-23T12:27:11.012",
+          "id": "RkQyhZaCzqY",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 22,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "V4rE1tsj5Rb",
+            "domainType": "TRACKER",
+            "displayName": "100-FD01. Multiple pregnancy",
+            "valueType": "TEXT",
+            "optionSet": { "id": "lty3hU2YI42" }
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.432",
+          "lastUpdated": "2021-07-23T12:27:11.001",
+          "id": "YHGBiqkBQCe",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 23,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "ivnHp4M4hFF",
+            "domainType": "TRACKER",
+            "displayName": "100-FD02. Stillborn?",
+            "valueType": "TEXT",
+            "optionSet": { "id": "lty3hU2YI42" }
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.431",
+          "lastUpdated": "2021-07-23T12:27:11.000",
+          "id": "YoomCBIhFOx",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 24,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "jf9TogeSZpk",
+            "domainType": "TRACKER",
+            "displayName": "100-FD03. If death within 24h specify number of hours survived",
+            "valueType": "INTEGER_ZERO_OR_POSITIVE"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.443",
+          "lastUpdated": "2021-07-23T12:27:11.015",
+          "id": "LcLkqONWeZa",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 25,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "lQ1Byr04JTx",
+            "domainType": "TRACKER",
+            "displayName": "100-FD04. Number of completed weeks of pregnancy",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.432",
+          "lastUpdated": "2021-07-23T12:27:11.001",
+          "id": "PFUMoN5u0Tt",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 26,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "GFVhltTCG8b",
+            "domainType": "TRACKER",
+            "displayName": "100-FD05. If death was perinatal, please state conditions of mother that affected the fetus and newborn",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.440",
+          "lastUpdated": "2021-07-23T12:27:11.010",
+          "id": "OqeE9Pmjt1f",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 27,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "xAWYJtQsg8M",
+            "domainType": "TRACKER",
+            "displayName": "100-FD06. Birth weight (in grams)",
+            "valueType": "INTEGER_ZERO_OR_POSITIVE"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.435",
+          "lastUpdated": "2021-07-23T12:27:11.004",
+          "id": "jGO0hOxMh5Y",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 28,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "DdfDMFW4EJ9",
+            "domainType": "TRACKER",
+            "displayName": "100-FD07. Age of mother (years)",
+            "valueType": "INTEGER_ZERO_OR_POSITIVE"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.438",
+          "lastUpdated": "2021-07-23T12:27:11.008",
+          "id": "akJaRWPowKe",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 29,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "sfpqAeqKeyQ",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD01a. Report disease or condition directly leading to death-Cause of death",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.428",
+          "lastUpdated": "2021-07-23T12:27:10.997",
+          "id": "BCd72v392rb",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 30,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "Ylht9kCLSRW",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD01ba. Report disease or condition directly leading to death-Time interval from onset to death(interval type)",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.443",
+          "lastUpdated": "2021-07-23T12:27:11.014",
+          "id": "JbjMkFyGHUL",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 31,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "zb7uTuBCPrN",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD02a1. Report chain of events ‘due to’ in order-Cause of death",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.435",
+          "lastUpdated": "2021-07-23T12:27:11.005",
+          "id": "uNDr8r8N5AM",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 32,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "QGFYJK00ES7",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD02a2. Report chain of events ‘due to’ in order-Cause of death",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.437",
+          "lastUpdated": "2021-07-23T12:27:11.008",
+          "id": "SoBTCybLc2O",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 33,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "CnPGhOcERFF",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD02a3. Report chain of events ‘due to’ in order-Cause of death",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.441",
+          "lastUpdated": "2021-07-23T12:27:11.011",
+          "id": "Upc4Fzn6an1",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 34,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "myydnkmLfhp",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD02b1a. Report chain of events ‘due to’ in order-Time interval from onset to death (Interval type)",
+            "valueType": "TEXT",
+            "optionSet": { "id": "cNhdi3ONm0U" }
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.440",
+          "lastUpdated": "2021-07-23T12:27:11.010",
+          "id": "tBmR5MHibxj",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 35,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "aC64sB86ThG",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD02b2a. Report chain of events ‘due to’ in order-Time interval from onset to death(interval type)",
+            "valueType": "TEXT",
+            "optionSet": { "id": "cNhdi3ONm0U" }
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.431",
+          "lastUpdated": "2021-07-23T12:27:11.000",
+          "id": "Bqg8D68bDH8",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 36,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "cmZrrHfTxW3",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD02b3a. Report chain of events ‘due to’ in order-Time interval from onset to death (interval type)",
+            "valueType": "TEXT",
+            "optionSet": { "id": "cNhdi3ONm0U" }
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.437",
+          "lastUpdated": "2021-07-23T12:27:11.008",
+          "id": "AjFxPUuoQa8",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 37,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "U18Tnfz9EKd",
+            "domainType": "TRACKER",
+            "displayName": "100-MD02. Date of Injury If external cause or poisoning",
+            "valueType": "DATE"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.434",
+          "lastUpdated": "2021-07-23T12:27:11.004",
+          "id": "CUv52TUWZ3g",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 38,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "QTKk2Xt8KDu",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD03a. State the underlying cause",
+            "valueType": "TEXT",
+            "optionSet": { "id": "TGMZyTRqouk" }
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.433",
+          "lastUpdated": "2021-07-23T12:27:11.002",
+          "id": "czaDVunhDCl",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 39,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "DKlOhZJOCrX",
+            "domainType": "TRACKER",
+            "displayName": "100-MD03b. Please describe how external cause occurred (If poisoning please specify poisoning agent)",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.440",
+          "lastUpdated": "2021-07-23T12:27:11.010",
+          "id": "ZITAJK4HfSK",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 40,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "xeE5TQLvucB",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD04. Other significant conditions contributing to death  (time intervals can be included in brackets after the condition)",
+            "valueType": "LONG_TEXT"
+          }
+        },
+        {
+          "created": "2019-08-08T14:03:17.282",
+          "lastUpdated": "2021-07-23T12:27:11.006",
+          "id": "We66Zw1uVTG",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 41,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "FhHPxY16vet",
+            "domainType": "TRACKER",
+            "displayName": "100-MD01. Manner of death (disease)",
+            "valueType": "TRUE_ONLY"
+          }
+        },
+        {
+          "created": "2019-08-08T14:03:17.282",
+          "lastUpdated": "2021-07-23T12:27:11.006",
+          "id": "rWo4MfbY08C",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 42,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "KsGOxFyzIs1",
+            "domainType": "TRACKER",
+            "displayName": "100-MD10b. Manner of death - Assault",
+            "valueType": "TRUE_ONLY"
+          }
+        },
+        {
+          "created": "2019-08-08T14:03:17.284",
+          "lastUpdated": "2021-07-23T12:27:11.009",
+          "id": "OgIkCJLexPF",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 43,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "gNM2Yhypydx",
+            "domainType": "TRACKER",
+            "displayName": "100-MD10c. Manner of death - Accident",
+            "valueType": "TRUE_ONLY"
+          }
+        },
+        {
+          "created": "2019-08-08T14:03:17.288",
+          "lastUpdated": "2021-07-23T12:27:11.013",
+          "id": "vwPAxBk8fln",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 44,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "tYH7drlbNya",
+            "domainType": "TRACKER",
+            "displayName": "100-MD10d. Manner of death -  Legal intervention",
+            "valueType": "TRUE_ONLY"
+          }
+        },
+        {
+          "created": "2019-08-08T14:03:17.274",
+          "lastUpdated": "2021-07-23T12:27:10.997",
+          "id": "iDJY3JSK1v4",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 45,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "fQWuywOaoN2",
+            "domainType": "TRACKER",
+            "displayName": "100-MD10e. Manner of death - Pending investigation",
+            "valueType": "TRUE_ONLY"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.430",
+          "lastUpdated": "2021-07-23T12:27:10.999",
+          "id": "zpq2e0CHtaT",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 46,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "Kk0hmrJPR90",
+            "domainType": "TRACKER",
+            "displayName": "100-OD01. Was surgery performed within the last 4 weeks?",
+            "valueType": "TEXT",
+            "optionSet": { "id": "lty3hU2YI42" }
+          }
+        },
+        {
+          "created": "2019-08-08T14:03:17.274",
+          "lastUpdated": "2021-07-23T12:27:10.999",
+          "id": "i9dur2w6df1",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 47,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "b4yPk98om7e",
+            "domainType": "TRACKER",
+            "displayName": "100-MD10f. Manner of death - Could not be determined",
+            "valueType": "TRUE_ONLY"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.434",
+          "lastUpdated": "2021-07-23T12:27:11.003",
+          "id": "t0St4wd0DTy",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 48,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "j5TIQx3gHyF",
+            "domainType": "TRACKER",
+            "displayName": "100-OD02. If yes please specify date of surgery",
+            "valueType": "DATE"
+          }
+        },
+        {
+          "created": "2019-08-08T14:03:17.285",
+          "lastUpdated": "2021-07-23T12:27:11.009",
+          "id": "bjNMgfYU0HJ",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 49,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "wX3i3gkTG4m",
+            "domainType": "TRACKER",
+            "displayName": "100-MD10g. Manner of death -  Intentional self-harm",
+            "valueType": "TRUE_ONLY"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.434",
+          "lastUpdated": "2021-07-23T12:27:11.004",
+          "id": "JZUKaH21b3T",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 50,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "JhHwdQ337nn",
+            "domainType": "TRACKER",
+            "displayName": "100-OD03. If yes please specify reason for surgery (disease or condition)",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-08-08T14:03:17.284",
+          "lastUpdated": "2021-07-23T12:27:11.009",
+          "id": "tO3Cf6CUFWE",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 51,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "xDMX2CJ4Xw3",
+            "domainType": "TRACKER",
+            "displayName": "100-MD10h. Manner of death - War",
+            "valueType": "TRUE_ONLY"
+          }
+        },
+        {
+          "created": "2019-08-08T14:03:17.289",
+          "lastUpdated": "2021-07-23T12:27:11.016",
+          "id": "BTXke7iObDd",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 52,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "o1hG9vr0peF",
+            "domainType": "TRACKER",
+            "displayName": "100-MD10i. Manner of death - Unknown",
+            "valueType": "TRUE_ONLY"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.432",
+          "lastUpdated": "2021-07-23T12:27:11.002",
+          "id": "W5Nlrfi6tJx",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 53,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "jY3K6Bv4o9Q",
+            "domainType": "TRACKER",
+            "displayName": "100-OD04. Was an autopsy requested?",
+            "valueType": "TEXT",
+            "optionSet": { "id": "lty3hU2YI42" }
+          }
+        },
+        {
+          "created": "2019-08-08T14:03:17.276",
+          "lastUpdated": "2021-07-23T12:27:11.000",
+          "id": "CcrVIUVGTa5",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 54,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "AZSlwlRAFig",
+            "domainType": "TRACKER",
+            "displayName": "100-MD10j. Manner of death - external cause or poisoning",
+            "valueType": "TRUE_ONLY"
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.441",
+          "lastUpdated": "2021-07-23T12:27:11.012",
+          "id": "I56RMIAiayP",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 55,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "UfG52s4YcUt",
+            "domainType": "TRACKER",
+            "displayName": "100-OD05. If yes were the findings used in the certification?",
+            "valueType": "TEXT",
+            "optionSet": { "id": "lty3hU2YI42" }
+          }
+        },
+        {
+          "created": "2019-08-08T14:03:17.287",
+          "lastUpdated": "2021-07-23T12:27:11.012",
+          "id": "KkT01HVIfIS",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 56,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "kGIDD5xIeLC",
+            "domainType": "TRACKER",
+            "displayName": "100-PO01. Place of occurrence of the external cause",
+            "valueType": "TEXT",
+            "optionSet": { "id": "fFz67YbP5Pk" }
+          }
+        },
+        {
+          "created": "2019-07-08T16:26:54.435",
+          "lastUpdated": "2021-07-23T12:27:11.005",
+          "id": "U7UVykVdl3o",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 57,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "mDez8j7furx",
+            "domainType": "TRACKER",
+            "displayName": "100-PO02. If Other place (please specify):",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2019-09-26T12:54:27.779",
+          "lastUpdated": "2021-07-23T12:27:10.998",
+          "id": "j3ws3jSyy6B",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 58,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "WkXxkKEJLsg",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD01bb. Report disease or condition directly leading to death-Time interval from onset to death (interval)",
+            "valueType": "NUMBER"
+          }
+        },
+        {
+          "created": "2019-09-26T12:54:27.788",
+          "lastUpdated": "2021-07-23T12:27:11.018",
+          "id": "m5KtCHrP4T5",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 59,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "fleGy9CvHYh",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD02b1b. Report chain of events ‘due to’ in order-Time interval from onset to death (Interval)",
+            "valueType": "NUMBER"
+          }
+        },
+        {
+          "created": "2019-09-26T12:54:27.785",
+          "lastUpdated": "2021-07-23T12:27:11.009",
+          "id": "GelcTxq2Zkz",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 60,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "hO8No9fHVd2",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD02b2b. Report chain of events ‘due to’ in order-Time interval from onset to death(interval)",
+            "valueType": "NUMBER"
+          }
+        },
+        {
+          "created": "2019-09-26T12:54:27.781",
+          "lastUpdated": "2021-07-23T12:27:11.001",
+          "id": "pciYoQHoyMj",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 61,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "eCVDO6lt4go",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD02b3b. Report chain of events ‘due to’ in order-Time interval from onset to death (interval)",
+            "valueType": "NUMBER"
+          }
+        },
+        {
+          "created": "2020-03-15T16:32:04.992",
+          "lastUpdated": "2021-07-23T12:27:11.015",
+          "id": "S1g3jJylId8",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 62,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "zD0E77W4rFs",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD01a. Report disease or condition directly leading to death-Cause of death-Term",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2020-03-15T16:32:04.988",
+          "lastUpdated": "2021-07-23T12:27:11.010",
+          "id": "yP2fEdAkPWP",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 63,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "tuMMQsGtE69",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD02a1. Report chain of events ‘due to’ in order-Cause of death-Term",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2020-03-15T16:32:04.990",
+          "lastUpdated": "2021-07-23T12:27:11.012",
+          "id": "D4TTcJWAW6G",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 64,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "C8n6hBilwsX",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD02a2. Report chain of events ‘due to’ in order-Cause of death-Term",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2020-03-15T16:32:04.990",
+          "lastUpdated": "2021-07-23T12:27:11.014",
+          "id": "LtLipKzpIIM",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 65,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "IeS8V8Yf40N",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD02a3. Report chain of events ‘due to’ in order-Cause of death-Term",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2020-03-15T16:32:04.981",
+          "lastUpdated": "2021-07-23T12:27:11.000",
+          "id": "GRFJyYykiQc",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 66,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "sJhOdGLD5lj",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD03a. State the underlying cause-Term",
+            "valueType": "LONG_TEXT"
+          }
+        },
+        {
+          "created": "2020-03-15T16:32:04.986",
+          "lastUpdated": "2021-07-23T12:27:11.007",
+          "id": "qWU9j4P6AF7",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 67,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "k9xdBQzYMXo",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD01a. Report disease or condition directly leading to death-Cause of death-URI",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2020-03-15T16:32:04.990",
+          "lastUpdated": "2021-07-23T12:27:11.012",
+          "id": "TYDsQM1dga1",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 68,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "yftBZ5bSEOb",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD02a1. Report chain of events ‘due to’ in order-Cause of death-URI",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2020-03-15T16:32:04.985",
+          "lastUpdated": "2021-07-23T12:27:11.006",
+          "id": "wQqMuNhFg9H",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 69,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "fJUy96o8akn",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD02a2. Report chain of events ‘due to’ in order-Cause of death-URI",
+            "valueType": "TEXT",
+            "optionSet": { "id": "tJLpxB3nPGA" }
+          }
+        },
+        {
+          "created": "2020-03-15T16:32:04.981",
+          "lastUpdated": "2021-07-23T12:27:11.000",
+          "id": "t9v8MpnqI0Y",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 70,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "S53kx50gjQn",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD02a3. Report chain of events ‘due to’ in order-Cause of death-URI",
+            "valueType": "TEXT",
+            "optionSet": { "id": "tJLpxB3nPGA" }
+          }
+        },
+        {
+          "created": "2020-03-15T16:32:04.980",
+          "lastUpdated": "2021-07-23T12:27:10.999",
+          "id": "j0gSQGd12Gm",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 71,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "L97MrANAav9",
+            "domainType": "TRACKER",
+            "displayName": "020-100-MD03a. State the underlying cause-URI",
+            "valueType": "LONG_TEXT"
+          }
+        },
+        {
+          "created": "2020-04-19T07:27:15.609",
+          "lastUpdated": "2021-07-23T12:27:11.003",
+          "id": "rcCjI6SSBGZ",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 72,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "cSDJ9kSJkFP",
+            "domainType": "TRACKER",
+            "displayName": "020-100-SearchTextA ",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2020-04-19T07:27:15.611",
+          "lastUpdated": "2021-07-23T12:27:11.005",
+          "id": "mYtI0M4Te7M",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 73,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "uckvenVFnwf",
+            "domainType": "TRACKER",
+            "displayName": "020-100-SearchTextB",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2020-04-19T07:27:15.616",
+          "lastUpdated": "2021-07-23T12:27:11.010",
+          "id": "m0ZG22U5K4V",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 74,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "ZFdJRT3PaUd",
+            "domainType": "TRACKER",
+            "displayName": "020-100-SearchTextC",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2020-04-19T07:27:15.609",
+          "lastUpdated": "2021-07-23T12:27:11.002",
+          "id": "iHnJAzUv27h",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 75,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "Op5pSvgHo1M",
+            "domainType": "TRACKER",
+            "displayName": "020-100-SearchTextD",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2020-04-19T07:31:06.304",
+          "lastUpdated": "2021-07-23T12:27:11.011",
+          "id": "PQjHHjuJsFk",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 76,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "QHY3iYRLvMp",
+            "domainType": "TRACKER",
+            "displayName": "AltcauseAsearch",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2020-04-19T07:31:06.299",
+          "lastUpdated": "2021-07-23T12:27:11.004",
+          "id": "rHRunHGkVcJ",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 77,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "NkiH8GTX6HC",
+            "domainType": "TRACKER",
+            "displayName": "AltcauseBsearch",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2020-04-19T07:31:06.304",
+          "lastUpdated": "2021-07-23T12:27:11.011",
+          "id": "fjKvXQZVJpp",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 78,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "SDPq8UURlWc",
+            "domainType": "TRACKER",
+            "displayName": "AltcauseCsearch",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2020-04-19T07:31:06.301",
+          "lastUpdated": "2021-07-23T12:27:11.007",
+          "id": "vlS7GTuSBTN",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 79,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "zqW9xWyqOur",
+            "domainType": "TRACKER",
+            "displayName": "AltcauseDsearch",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2021-01-07T11:56:25.785",
+          "lastUpdated": "2021-07-23T12:27:11.018",
+          "id": "q6yjDRvWsXP",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": true,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 80,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "twVlVWM3ffz",
+            "domainType": "TRACKER",
+            "displayName": "100-Approval ",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2021-05-04T05:42:18.361",
+          "lastUpdated": "2021-07-23T12:27:11.004",
+          "id": "PQGpx4YIvSw",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 81,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "u9tYUv6AM51",
+            "domainType": "TRACKER",
+            "displayName": "100-DD0A. I attended the deceased before death",
+            "valueType": "TEXT",
+            "optionSet": { "id": "lty3hU2YI42" }
+          }
+        },
+        {
+          "created": "2021-05-04T05:42:18.362",
+          "lastUpdated": "2021-07-23T12:27:11.006",
+          "id": "rKQwOpLuu8X",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 82,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "ZXZZfzBpu8a",
+            "domainType": "TRACKER",
+            "displayName": "100-DD0B.I examined the body after death",
+            "valueType": "TEXT",
+            "optionSet": { "id": "lty3hU2YI42" }
+          }
+        },
+        {
+          "created": "2021-05-04T05:42:18.363",
+          "lastUpdated": "2021-07-23T12:27:11.007",
+          "id": "Dq0mzHocTXZ",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 83,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "cp5xzqVU2Vw",
+            "domainType": "TRACKER",
+            "displayName": "100-DD0C. I conducted the post mortem of the body",
+            "valueType": "TEXT",
+            "optionSet": { "id": "lty3hU2YI42" }
+          }
+        },
+        {
+          "created": "2021-05-04T05:42:18.356",
+          "lastUpdated": "2021-07-23T12:27:10.998",
+          "id": "hS6ek7GmtI2",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 84,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "lu9BiHPxNqH",
+            "domainType": "TRACKER",
+            "displayName": "100-DD0X. Declaration Other Specify",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2021-07-20T10:28:32.679",
+          "lastUpdated": "2021-07-23T12:27:11.014",
+          "id": "va5HN0QpzLT",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 85,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "QDHeWslaEoH",
+            "domainType": "TRACKER",
+            "displayName": "HMIS100. Referred",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2021-07-20T10:28:32.663",
+          "lastUpdated": "2021-07-23T12:27:11.002",
+          "id": "VIhmJtmXpll",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 86,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "WqYvFt79TQB",
+            "domainType": "TRACKER",
+            "displayName": "HMIS100. Referred From?",
+            "valueType": "TEXT"
+          }
+        },
+        {
+          "created": "2021-07-20T10:28:32.663",
+          "lastUpdated": "2021-07-23T12:27:11.002",
+          "id": "acFIfkanrB1",
+          "displayInReports": false,
+          "skipSynchronization": false,
+          "renderOptionsAsRadio": false,
+          "compulsory": false,
+          "allowProvidedElsewhere": false,
+          "sortOrder": 87,
+          "allowFutureDate": false,
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "dataElement": {
+            "id": "roxn33dtLLx",
+            "domainType": "TRACKER",
+            "displayName": "HMIS100. Date of Birth Known",
+            "valueType": "TEXT",
+            "optionSet": { "id": "Tn0IZ14u2cd" }
+          }
+        },
+        {
+          "id": "GJo5JGg9Q6a",
+          "dataElement": { "id": "v7mt2RBEWEq", "valueType": "TEXT" },
+          "programStage": { "id": "aKclf7Yl1PE" },
+          "sortOrder": 89
+        }
+      ],
+      "translations": [],
+      "userGroupAccesses": [],
+      "userAccesses": [],
+      "notificationTemplates": [],
+      "programStageSections": []
+    }
+  ]
+}

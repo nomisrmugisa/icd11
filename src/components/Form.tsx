@@ -1,6 +1,8 @@
 // Check line 331 for the update I just added that fixes the problematic field
 
 import React, { useEffect, useState } from "react";
+import attachPayload from "./attachPayload.json";
+
 import {
   Button,
   Card,
@@ -21,6 +23,19 @@ import { isEmpty } from "lodash";
 import moment from "moment";
 const { Option } = Select;
 const { Title } = Typography;
+
+const customFieldsReservedIds = [
+  { name: "D1", id: "BflLLM6wTq5" },
+  { name: "D2", id: "aQd347vDjhK" },
+  { name: "D3", id: "SQw0IhLBgkS" },
+  { name: "D4", id: "SLDIy0rbjWS" },
+  { name: "D5", id: "R1uBQrbwcFx" },
+  { name: "D6", id: "ouvH3MBYJgX" },
+  { name: "D7", id: "MwQAAXyvQ1G" },
+  { name: "D8", id: "hoO0m77Cub5" },
+  { name: "D9", id: "dq4CSNwF74B" },
+  { name: "D10", id: "a456PAfVR0J" },
+];
 
 export const DataEntryForm = observer(() => {
   const [form] = Form.useForm();
@@ -563,10 +578,20 @@ export const DataEntryForm = observer(() => {
   };
   // End of Testing
 
+  // console.log(
+  //   Object.fromEntries(
+  //     customFieldsReservedIds.map(({ name, id }) => [id, name, false])
+  //   )
+  // );
   // add row state
   const [customRowLength, setCustomRowLength] = React.useState(0);
   const [creatingCustomField, setCreatingFiled] = React.useState(false);
   const [customFieldName, setCustomFieldName] = React.useState("");
+  const usedCustomIds = React.useRef(
+    Object.fromEntries(
+      customFieldsReservedIds.map(({ id }) => [id, false])
+    )
+  );
 
   // const customRowsRef = React.useRef(
   //   [] as { name: string; id: string | null }[]
@@ -576,25 +601,58 @@ export const DataEntryForm = observer(() => {
   );
 
   React.useEffect(() => {
-    console.log(customRowLength);
-    fetch("https://hmis-dev.health.go.ug/api/dataStore/Attributes/Attributes", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: `${process.env.REACT_APP_DHIS2_AUTHORIZATION}`,
-      },
-    })
+    // console.log(customRowLength);
+    fetch(
+      `${process.env.REACT_APP_DHIS2_BASE_URL}api/dataStore/Attributes/Attributes`,
+      {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: `${process.env.REACT_APP_DHIS2_AUTHORIZATION}`,
+        },
+      }
+    )
       .then((raw) => raw.json())
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         if (res.status === "ERROR") {
-          alert(res.message);
+          if (res.httpStatus === "Not Found") {
+            fetch(
+              `${process.env.REACT_APP_DHIS2_BASE_URL}api/dataStore/Attributes/Attributes`,
+              {
+                headers: {
+                  Accept: "application/json",
+                  "Content-Type": "application/json",
+                  Authorization: `${process.env.REACT_APP_DHIS2_AUTHORIZATION}`,
+                },
+                method: "POST",
+                body: JSON.stringify([]),
+              }
+            ).catch((error) => {
+              console.log(error);
+            });
+          }
           setCustomRows([]);
           setCustomRowLength(0);
         } else {
-          console.log(res);
+          // console.log(res);
           setCustomRows(res);
+          setCustomRowLength(res.length);
+          const keys = Object.keys(usedCustomIds.current);
+          Object.keys(usedCustomIds.current).forEach((id) => {
+            usedCustomIds.current[id] = false;
+          });
+          // console.log(usedCustomIds.current);
+          res.forEach((row: { id: string }) => {
+            if (keys.includes(row.id)) {
+              usedCustomIds.current[row.id] = true;
+            }
+          });
+          // console.log(usedCustomIds.current);
         }
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }, [customRowLength]);
 
@@ -610,7 +668,7 @@ export const DataEntryForm = observer(() => {
 
   const [fetching, setFetching] = React.useState(false);
   const [deleting, setDeleting] = React.useState(false);
-  console.log(process.env.REACT_APP_DHIS2_AUTHORIZATION);
+  // console.log(process.env.REACT_APP_DHIS2_AUTHORIZATION);
   React.useEffect(() => {
     if (fetching) {
       if (
@@ -619,22 +677,77 @@ export const DataEntryForm = observer(() => {
         })
       ) {
         alert(`${customFieldName} Already exists`);
+        setFetching(false);
         return;
       }
-      fetch("https://hmis-dev.health.go.ug/api/system/id?", {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          Authorization: `${process.env.REACT_APP_DHIS2_AUTHORIZATION}`,
-        },
+      // console.log(usedCustomIds.current)
+      // find first unused
+      let idx = Object.keys(usedCustomIds.current).findIndex((k)=>{
+        // console.log(usedCustomIds.current[k])
+        return !usedCustomIds.current[k];
       })
+      // console.log(idx);
+      idx = idx > -1 ? idx : 0;
+      let field = { ...customRows[idx] };
+      // console.log(customRowLength);
+      // console.log(customFieldsReservedIds[idx]);
+
+      field.id = customFieldsReservedIds[idx].id;
+      usedCustomIds.current[field.id] = true;
+
+      const attachPayload = {
+        aggregationType: "NONE",
+        code: customFieldName,
+        domainType: "TRACKER",
+        // publicAccess: "rw------",
+        // lastUpdated: "2021-10-06T13:41:20.427",
+        valueType: "TEXT",
+        formName: customFieldName,
+        id: field.id,
+        // created: "2021-10-06T11:38:18.755",
+        // attributeValues: [],
+        // zeroIsSignificant: false,
+        name: customFieldName,
+        shortName: customFieldName,
+        categoryCombo: { id: "bjDvmb4bfuf" },
+        // lastUpdatedBy: { id: "M5zQapPyTZI" },
+        // user: { id: "M5zQapPyTZI" },
+        // translations: [],
+        // userGroupAccesses: [],
+        // userAccesses: [],
+        // legendSets: [],
+        // aggregationLevels: [],
+      };
+
+      fetch(
+        `${process.env.REACT_APP_DHIS2_BASE_URL}api/29/dataElements/BflLLM6wTq5?mergeMode=REPLACE`,
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `${process.env.REACT_APP_DHIS2_AUTHORIZATION}`,
+          },
+          method: "PUT",
+          body: JSON.stringify(attachPayload),
+        }
+      )
         .then((raw) => raw.json())
         .then((res) => {
-          if (res.codes) {
-            let field = { ...customRows[customRowLength - 1] };
-            field.id = res.codes[0];
+          console.log(res);
+          if (res) {
+            const dataElement = {
+              aggregationType: "NONE",
+              domainType: "TRACKER",
+              valueType: "TEXT",
+              name: customFieldName,
+              shortName: field.id,
+              id: field.id,
+              code: field.id,
+              categoryCombo: { id: "bjDvmb4bfuf" },
+              legendSets: [],
+            } as any;
             fetch(
-              "https://hmis-dev.health.go.ug/api/dataStore/Attributes/Attributes",
+              `${process.env.REACT_APP_DHIS2_BASE_URL}api/dataStore/Attributes/Attributes`,
               {
                 headers: {
                   Accept: "application/json",
@@ -645,23 +758,62 @@ export const DataEntryForm = observer(() => {
                 body: JSON.stringify([
                   ...customRows,
                   {
-                    aggregationType: "NONE",
-                    domainType: "TRACKER",
-                    valueType: "TEXT",
-                    name: customFieldName,
-                    shortName: field.id,
-                    id: field.id,
-                    code: field.id,
-                    categoryCombo: { id: "bjDvmb4bfuf" },
-                    legendSets: [],
+                    ...dataElement,
                   },
                 ]),
               }
             )
               .then((raw) => raw.json())
-              .then((res) => {
-                console.log(res);
+              .then(async (res) => {
+                // console.log(res);
+                // attachPayload.programStages[0].programStageDataElements.push({
+                //   created: "2019-09-23T22:45:37.606",
+                //   lastUpdated: "2021-07-23T12:27:11.001",
+                //   id: "XUBVTLxuIvM",
+                //   displayInReports: false,
+                //   skipSynchronization: false,
+                //   renderOptionsAsRadio: false,
+                //   compulsory: true,
+                //   allowProvidedElsewhere: false,
+                //   allowFutureDate: false,
+                //   // programStage: { id: "aKclf7Yl1PE" },
+                //   dataElement: dataElement,
+                // } as any);
+
+                // customRows.forEach((d) => {
+                //   attachPayload.programStages[0].programStageDataElements.push({
+                //     created: "2019-09-23T22:45:37.606",
+                //     lastUpdated: "2021-07-23T12:27:11.001",
+                //     id: "XUBVTLxuIvM",
+                //     displayInReports: false,
+                //     skipSynchronization: false,
+                //     renderOptionsAsRadio: false,
+                //     compulsory: true,
+                //     allowProvidedElsewhere: false,
+                //     allowFutureDate: false,
+                //     programStage: { id: "aKclf7Yl1PE" },
+                //     dataElement: d,
+                //   } as any);
+                // });
+
                 if (res.httpStatusCode === 200) {
+                  // try {
+                  //   const attached = await fetch(
+                  //     `${process.env.REACT_APP_DHIS2_BASE_URL}api/29/metadata`,
+                  //     {
+                  //       headers: {
+                  //         Accept: "application/json",
+                  //         "Content-Type": "application/json",
+                  //         Authorization: `${process.env.REACT_APP_DHIS2_AUTHORIZATION}`,
+                  //       },
+                  //       method: "POST",
+                  //       body: JSON.stringify(attachPayload),
+                  //     }
+                  //   ).then((raw) => raw.json());
+                  //   console.log(attached);
+                  // } catch (e) {
+                  //   console.log(e);
+                  // }
                   setCustomRowLength(customRowLength + 1);
                   // const newArray = [...customRowsRef.current];
                   // newArray.push({ ...field, name: customFieldName });
@@ -687,11 +839,11 @@ export const DataEntryForm = observer(() => {
           setFetching(false);
         });
     }
-  }, [customFieldName, customRowLength, customRows, fetching]);
+  }, [customFieldName, customRowLength, customRows, fetching, usedCustomIds]);
   React.useEffect(() => {
     if (deleting) {
       fetch(
-        "https://hmis-dev.health.go.ug/api/dataStore/Attributes/Attributes",
+        `${process.env.REACT_APP_DHIS2_BASE_URL}api/dataStore/Attributes/Attributes`,
         {
           headers: {
             Accept: "application/json",
@@ -699,15 +851,12 @@ export const DataEntryForm = observer(() => {
             Authorization: `${process.env.REACT_APP_DHIS2_AUTHORIZATION}`,
           },
           method: "PUT",
-          body: JSON.stringify([
-            ...customRows,
-            
-          ]),
+          body: JSON.stringify([...customRows]),
         }
       )
         .then((raw) => raw.json())
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           if (res.httpStatusCode === 200) {
             setCustomRowLength(customRowLength - 1);
             setDeleting(false);
@@ -1037,51 +1186,55 @@ export const DataEntryForm = observer(() => {
                     <td className="border p-1" colSpan={2}>
                       <b>{name}</b>
                     </td>
-                    <td className="border p-1"   colSpan={2}>
-                      <span style={{display: 'flex'}}>
-                      <Form.Item name={id as string} className="m-0" style={{flexGrow: 1}}>
-                        <Input
-                          size="large"
-                          // disabled={
-                          //     store.viewMode ||
-                          //     store.allDisabled.ZKBE8Xm9DJG
-                          // }
-                        />
-                      </Form.Item>
-                      <span
-                        style={{ display: "inline-block", cursor: "pointer" }}
-                      >
-                        <button
-                          disabled={fetching || deleting}
-                          type="button"
-                          className="ant-btn ant-btn-lg ant-btn-icon-only"
-                          onClick={()=>{
-                            const rows = [...customRows];
-                            rows.splice(index, 1);
-                            setCustomRows([...rows]);
-                            setDeleting(true);
-                          }}
+                    <td className="border p-1" colSpan={2}>
+                      <span style={{ display: "flex" }}>
+                        <Form.Item
+                          name={id as string}
+                          className="m-0"
+                          style={{ flexGrow: 1 }}
                         >
-                          <span
-                            role="img"
-                            aria-label="close"
-                            className="anticon anticon-close"
-                            style={{ fontSize: "16px", color: "red" }}
+                          <Input
+                            size="large"
+                            // disabled={
+                            //     store.viewMode ||
+                            //     store.allDisabled.ZKBE8Xm9DJG
+                            // }
+                          />
+                        </Form.Item>
+                        <span
+                          style={{ display: "inline-block", cursor: "pointer" }}
+                        >
+                          <button
+                            disabled={fetching || deleting}
+                            type="button"
+                            className="ant-btn ant-btn-lg ant-btn-icon-only"
+                            onClick={() => {
+                              const rows = [...customRows];
+                              rows.splice(index, 1);
+                              setCustomRows([...rows]);
+                              setDeleting(true);
+                            }}
                           >
-                            <svg
-                              viewBox="64 64 896 896"
-                              focusable="false"
-                              data-icon="close"
-                              width="1em"
-                              height="1em"
-                              fill="currentColor"
-                              aria-hidden="true"
+                            <span
+                              role="img"
+                              aria-label="close"
+                              className="anticon anticon-close"
+                              style={{ fontSize: "16px", color: "red" }}
                             >
-                              <path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path>
-                            </svg>
-                          </span>
-                        </button>
-                      </span>
+                              <svg
+                                viewBox="64 64 896 896"
+                                focusable="false"
+                                data-icon="close"
+                                width="1em"
+                                height="1em"
+                                fill="currentColor"
+                                aria-hidden="true"
+                              >
+                                <path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path>
+                              </svg>
+                            </span>
+                          </button>
+                        </span>
                       </span>
                     </td>
                   </tr>
@@ -1115,16 +1268,18 @@ export const DataEntryForm = observer(() => {
           )}
         </div>
 
-        <button
-          disabled={fetching}
-          onClick={(e) => {
-            e.preventDefault();
-            setCreatingFiled(true);
-            // setCustomRowLength(customRowLength + 1);
-          }}
-        >
-          +Add field
-        </button>
+        {customRowLength < 10 && (
+          <button
+            disabled={fetching}
+            onClick={(e) => {
+              e.preventDefault();
+              setCreatingFiled(true);
+              // setCustomRowLength(customRowLength + 1);
+            }}
+          >
+            +Add field
+          </button>
+        )}
 
         <table className="my-2 w-full border-collapse px-2">
           <tbody>
